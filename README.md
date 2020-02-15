@@ -40,5 +40,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* To the Security Personel who did no let my waitlisted friends into the hackathon.
-e
+* To the Security Personel who did not let my waitlisted friends into the hackathon.
