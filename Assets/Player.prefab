@@ -384,3 +384,4 @@ MonoBehaviour:
   coolDown: 0.2
   bulletsContainer: {fileID: 0}
   spawnPoint: {fileID: 5883219418037755467}
+  rb: {fileID: 5883219418215427010}

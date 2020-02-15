@@ -8,4 +8,8 @@ public static class Helper
     {
         return (value - from1) / (to1 - from1) * (to2 - from2) + from2;
     }
+    public static Vector2 AngleVector(float angle)
+    {
+        return new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
+    }
 }
