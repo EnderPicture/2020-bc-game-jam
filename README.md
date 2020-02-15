@@ -29,7 +29,7 @@ This is Zombie Shooting Game
 
 * **Mike Ko** - Artist
 
-* **Chelsea Nya** - Artist / Unity Developer
+* **Chelsea Nya** - Artist / Unity Developer / dip
 
 * **Edison Tang** - Music/Sound Designer
 
