@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    Rigidbody rb;
     Vector2 lastInput;
 
+    public Rigidbody rb;
     public float maxMove;
     public float accMove;
     public float dampMove;
@@ -15,8 +15,6 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-
         maxMove = maxMove > 0 ? maxMove : 1;
         accMove = accMove > 0 ? accMove : 1;
     }
