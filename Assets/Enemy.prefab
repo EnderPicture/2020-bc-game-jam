@@ -144,6 +144,7 @@ MonoBehaviour:
   maxMove: 3
   accMove: 5
   dampMove: 10
+  health: 3
   player: {fileID: 0}
 --- !u!54 &8742735881771845620
 Rigidbody:
