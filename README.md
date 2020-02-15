@@ -4,7 +4,7 @@ This is Zombie Shooting Game
 
 ## Built With
 
-* [Unity](https://unity.com/) - The mobile building application
+* [Unity](https://unity.com/) - The game building application, Version 2019.3.1f1
 
 * [TV Paint](https://www.tvpaint.com/) - Used for making animation
 
