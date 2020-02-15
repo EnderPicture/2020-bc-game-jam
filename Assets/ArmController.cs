@@ -26,7 +26,6 @@ public class ArmController : MonoBehaviour
 
             GameObject newBullet = GameObject.Instantiate(bullet, spawnPoint.position, transform.rotation, bulletsContainer);
             BulletController bulletController = newBullet.GetComponent<BulletController>();
-            // bulletController.speed = 5;
         }
     }
 }
