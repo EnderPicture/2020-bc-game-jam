@@ -9,6 +9,8 @@ public class EnemyController : MonoBehaviour
     public float accMove;
     public float dampMove;
 
+    public int health;
+
     public Transform player;
 
     void Start()
@@ -39,5 +41,17 @@ public class EnemyController : MonoBehaviour
         }
 
         rb.velocity = velocity;
+    }
+
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Bullet")) {
+            other.gameObject.GetComponent<BulletController>().die();
+            health -= 1;
+
+            if (health <= 0) {
+                GameObject.Destroy(this.gameObject);
+            }
+        }
     }
 }

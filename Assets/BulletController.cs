@@ -21,8 +21,12 @@ public class BulletController : MonoBehaviour
     {
         if (spawnTime + health < Time.realtimeSinceStartup)
         {
-            GameObject.Destroy(this.gameObject);
+            die();
         }
+    }
+    public void die()
+    {
+        GameObject.Destroy(this.gameObject);
     }
     void FixedUpdate()
     {
