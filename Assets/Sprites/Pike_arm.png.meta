@@ -1,0 +1,310 @@
+fileFormatVersion: 2
+guid: 7ecaa175d7b72478daafd5248d5fa17e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -177594311688952434
+    second: Pike_arm_0
+  - first:
+      213: 670618069063216245
+    second: Pike_arm_1
+  - first:
+      213: -5084986804298935867
+    second: Pike_arm_2
+  - first:
+      213: 7214330984641616405
+    second: Pike_arm_3
+  - first:
+      213: 288672384098615749
+    second: Pike_arm_4
+  - first:
+      213: 8380231704939783841
+    second: Pike_arm_5
+  - first:
+      213: -1014009535515552375
+    second: Pike_arm_6
+  - first:
+      213: -5466437561097859428
+    second: Pike_arm_7
+  - first:
+      213: 2716433350228139133
+    second: Pike_arm_8
+  - first:
+      213: 802340874450858188
+    second: Pike_arm_9
+  - first:
+      213: 3789577110383710847
+    second: Pike_arm_10
+  - first:
+      213: 3901009960229611079
+    second: Pike_arm_11
+  - first:
+      213: -8547445952289302528
+    second: Pike_arm_0
+  - first:
+      213: 7270423849018334893
+    second: Pike_arm_1
+  - first:
+      213: 4542926472151190025
+    second: Pike_arm_2
+  - first:
+      213: 1077028352303944348
+    second: Pike_arm_3
+  - first:
+      213: -9151452099055279085
+    second: Pike_arm_4
+  - first:
+      213: 8883022373847784413
+    second: Pike_arm_5
+  - first:
+      213: 2090955052770628152
+    second: Pike_arm_6
+  - first:
+      213: -2874234296596206578
+    second: Pike_arm_7
+  - first:
+      213: 6679897329340022826
+    second: Pike_arm_8
+  - first:
+      213: -6702110726953947418
+    second: Pike_arm_9
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: 2
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Pike_arm_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1679
+        height: 1050
+      alignment: 9
+      pivot: {x: 0.583, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00812f4513f516980800000000000000
+      internalID: -8547445952289302528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pike_arm_1
+      rect:
+        serializedVersion: 2
+        x: 1679
+        y: 0
+        width: 1679
+        height: 1050
+      alignment: 9
+      pivot: {x: 0.583, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dae144768fbb5e460800000000000000
+      internalID: 7270423849018334893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pike_arm_2
+      rect:
+        serializedVersion: 2
+        x: 3358
+        y: 0
+        width: 1679
+        height: 1050
+      alignment: 9
+      pivot: {x: 0.583, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90a4a459e87bb0f30800000000000000
+      internalID: 4542926472151190025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pike_arm_3
+      rect:
+        serializedVersion: 2
+        x: 5037
+        y: 0
+        width: 1679
+        height: 1050
+      alignment: 9
+      pivot: {x: 0.583, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c92d910849f52fe00800000000000000
+      internalID: 1077028352303944348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pike_arm_4
+      rect:
+        serializedVersion: 2
+        x: 6716
+        y: 0
+        width: 1679
+        height: 1050
+      alignment: 9
+      pivot: {x: 0.583, y: 0.46}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c1c9aef002910400800000000000000
+      internalID: 288672384098615749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

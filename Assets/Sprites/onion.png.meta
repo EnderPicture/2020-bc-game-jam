@@ -150,9 +150,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 1920
-        height: 1080
+        y: 548
+        width: 154.66667
+        height: 274
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -170,10 +170,10 @@ TextureImporter:
       name: onion_1
       rect:
         serializedVersion: 2
-        x: 1920
-        y: 0
-        width: 1920
-        height: 1080
+        x: 154
+        y: 548
+        width: 154.66667
+        height: 274
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -191,10 +191,10 @@ TextureImporter:
       name: onion_2
       rect:
         serializedVersion: 2
-        x: 3840
-        y: 0
-        width: 1920
-        height: 1080
+        x: 308
+        y: 548
+        width: 154.66667
+        height: 274
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -212,10 +212,10 @@ TextureImporter:
       name: onion_3
       rect:
         serializedVersion: 2
-        x: 5760
-        y: 0
-        width: 1920
-        height: 1080
+        x: 0
+        y: 274
+        width: 154.66667
+        height: 274
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -233,10 +233,10 @@ TextureImporter:
       name: onion_4
       rect:
         serializedVersion: 2
-        x: 7680
-        y: 0
-        width: 1920
-        height: 1080
+        x: 154
+        y: 274
+        width: 154.66667
+        height: 274
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -254,10 +254,10 @@ TextureImporter:
       name: onion_5
       rect:
         serializedVersion: 2
-        x: 9600
-        y: 0
-        width: 1920
-        height: 1080
+        x: 308
+        y: 274
+        width: 154.66667
+        height: 274
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -275,10 +275,10 @@ TextureImporter:
       name: onion_6
       rect:
         serializedVersion: 2
-        x: 11520
+        x: 0
         y: 0
-        width: 1920
-        height: 1080
+        width: 154.66667
+        height: 274
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -296,10 +296,10 @@ TextureImporter:
       name: onion_7
       rect:
         serializedVersion: 2
-        x: 13440
+        x: 154
         y: 0
-        width: 1920
-        height: 1080
+        width: 154.66667
+        height: 274
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

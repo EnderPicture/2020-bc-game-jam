@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2969086681077075049}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.073, y: 0.68, z: 0}
-  m_LocalScale: {x: 0.48479506, y: 0.48479506, z: 0.48479506}
+  m_LocalPosition: {x: -0.004, y: 0.439, z: 0}
+  m_LocalScale: {x: 0.74950045, y: 0.74950045, z: 0.74950045}
   m_Children: []
   m_Father: {fileID: 2969086682653700079}
   m_RootOrder: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 1.5466667, y: 2.74}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -166,16 +166,22 @@ MonoBehaviour:
   accMoveEnemy: 0.1
   dampMoveEnemy: 10
   maxMoveFollowers: 2.5
-  accMoveFollowers: 1
+  accMoveFollowers: 0.5
   dampMoveFollowers: 10
   maxMoveFollowersInner: 2.5
-  accMoveFollowersInner: 5
+  accMoveFollowersInner: 10
   dampMoveFollowersInner: 10
   animator: {fileID: 4627522106053456233}
+  attackCoolDown: 0.5
   followerRadius: 3
   health: 3
   sprite: {fileID: 5118987572439623956}
   player: {fileID: 0}
+  mode: 2
+  bullet: {fileID: 5653734091636336881, guid: d2da582b37858f34f826271b90a21242, type: 3}
+  coolDown: 0.3
+  boostValue: 0.5
+  boostTimingRange: {x: 1, y: 3}
 --- !u!54 &8742735881771845620
 Rigidbody:
   m_ObjectHideFlags: 0
