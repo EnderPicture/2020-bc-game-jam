@@ -26,10 +26,12 @@ public class ArmController : MonoBehaviour
     public SpriteRenderer spriteRenderer;
 
     public CameraController cameraController;
+    public AudioManager audioManager;
 
     void Start()
     {
         cameraController = GameObject.Find("PlayerCamera").GetComponent<CameraController>();
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
     }
 
     void pistol()
@@ -49,6 +51,7 @@ public class ArmController : MonoBehaviour
 
         rb.AddForce(force, ForceMode.Impulse);
         cameraController.pistolShake();
+        audioManager.playShootPistol();
     }
 
     void shotgun()
@@ -60,6 +63,7 @@ public class ArmController : MonoBehaviour
         shotGunBullet();
         coolDown = shotgunCooldown;
         cameraController.shotgunShake();
+        audioManager.playShootShotgun();
     }
 
     void shotGunBullet()
