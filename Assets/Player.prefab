@@ -476,4 +476,4 @@ MonoBehaviour:
   shotgunBulletDuration: 0.45
   shotgunCooldown: 0.6
   shotgunKnockBack: 2
-  cameraShakeScript: {fileID: 0}
+  cameraController: {fileID: 0}

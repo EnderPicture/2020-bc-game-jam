@@ -21,7 +21,7 @@ public class ArmController : MonoBehaviour
     public float shotgunCooldown;
     public float shotgunKnockBack;
 
-    public CameraShake cameraShakeScript;
+    public CameraController cameraController;
 
     void Start()
     {
@@ -42,7 +42,7 @@ public class ArmController : MonoBehaviour
         Vector2 force = Helper.AngleVector((transform.eulerAngles.z - 90) * Mathf.Deg2Rad);
         
         rb.AddForce(force, ForceMode.Impulse);
-        cameraShakeScript.pistolShake();
+        cameraController.pistolShake();
     }
 
     void shotgun() {
@@ -52,7 +52,7 @@ public class ArmController : MonoBehaviour
         shotGunBullet();
         shotGunBullet();
         coolDown = shotgunCooldown;
-        cameraShakeScript.shotgunShake();
+        cameraController.shotgunShake();
     }
 
     void shotGunBullet() {
