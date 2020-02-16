@@ -27,7 +27,7 @@ public class EnemyController : MonoBehaviour
     float accMove;
     float dampMove;
 
-    public int health;
+    public float health;
     public SpriteRenderer sprite;
 
     public Transform player;
@@ -45,6 +45,9 @@ public class EnemyController : MonoBehaviour
     public Vector2 boostTimingRange;
     float nextBoost;
     float lastDash;
+
+    public float followerShootSpread;
+    public float followerHealth;
 
     void Start()
     {
@@ -68,7 +71,7 @@ public class EnemyController : MonoBehaviour
             if (Input.GetMouseButton(0) && time > lastShot + coolDown)
             {
                 lastShot = time;
-                Quaternion bulletSpread = Quaternion.Euler(new Vector3(0, 0, angle));
+                Quaternion bulletSpread = Quaternion.Euler(new Vector3(0, 0, angle + Random.Range(-followerShootSpread,followerShootSpread)));
                 GameObject newBullet = GameObject.Instantiate(bullet, transform.position, bulletSpread);
             }
 
@@ -175,6 +178,7 @@ public class EnemyController : MonoBehaviour
     public void convertToFollowers()
     {
         mode = FOLLOWER;
+        health = followerHealth;
         gameObject.layer = LayerMask.NameToLayer("Followers");
         sprite.color = new Color(1, 0, 0);
     }

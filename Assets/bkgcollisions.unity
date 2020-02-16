@@ -850,6 +850,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 531527806}
+    - target: {fileID: 2035669847, guid: 8b3228a09bfa5e941a13e329d25c25e9, type: 3}
+      propertyPath: followerShootSpread
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2035669847, guid: 8b3228a09bfa5e941a13e329d25c25e9, type: 3}
+      propertyPath: followerHealth
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2969086682407869389, guid: 8b3228a09bfa5e941a13e329d25c25e9,
         type: 3}
       propertyPath: m_Name
