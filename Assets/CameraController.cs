@@ -25,6 +25,11 @@ public class CameraController : MonoBehaviour
     Vector3 shakeNewPos;
     Vector3 mousePos1, mousePos2, screenMouse, mouseOffset, cameraNewPos;
 
+    void Start()
+    {
+        playerObject = GameObject.Find("Player");
+    }
+
     void Update()
     {
         mousePos1 = Input.mousePosition;

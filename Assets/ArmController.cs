@@ -29,6 +29,7 @@ public class ArmController : MonoBehaviour
 
     void Start()
     {
+        cameraController = GameObject.Find("PlayerCamera").GetComponent<CameraController>();
     }
 
     void pistol()
