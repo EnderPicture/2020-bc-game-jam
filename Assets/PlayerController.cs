@@ -14,19 +14,21 @@ public class PlayerController : MonoBehaviour
     public InfluencerBubbleController influencer;
 
     public Transform arm;
+    private float savedAngle=0;
 
     void Start()
     {
         maxMove = maxMove > 0 ? maxMove : 1;
         accMove = accMove > 0 ? accMove : 1;
     }
+
     void Update()
     {
         Vector2 mousePosition = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
         float angle = Vector3.SignedAngle(mousePosition, Vector3.up, Vector3.back);
         arm.eulerAngles = new Vector3(0, 0, angle);
         angle += 180;
-        
+        savedAngle = angle;
         if (angle < 22.5f || angle > 360 - 22.5f) {
             animator.Play("Idle4");
             spriteRenderer.flipX = true;
@@ -97,5 +99,9 @@ public class PlayerController : MonoBehaviour
         }
 
         rb.velocity = velocity;
+    }
+
+    public float getAngle(){
+        return savedAngle;
     }
 }
