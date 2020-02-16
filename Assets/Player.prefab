@@ -469,8 +469,9 @@ MonoBehaviour:
   pistolCooldown: 0.2
   pistolSpeed: 1.5
   shotgunSpread: 16
-  shotgunStartUpSpeedMax: 1.5
-  shotgunStartUpSpeedMin: 1.15
-  shotgunBulletDuration: 0.6
-  shotgunCooldown: 0.75
+  shotgunStartUpSpeedMax: 1.85
+  shotgunStartUpSpeedMin: 1.3
+  shotgunBulletDuration: 0.45
+  shotgunCooldown: 0.6
   shotgunKnockBack: 2
+  cameraShakeScript: {fileID: 0}
