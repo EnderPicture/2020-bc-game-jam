@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     public float accMove;
     public float dampMove;
 
+    public Animator animator;
+
     public Transform arm;
 
     void Start()
@@ -21,6 +23,18 @@ public class PlayerController : MonoBehaviour
         Vector2 mousePosition = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
         float angle = Vector3.SignedAngle(mousePosition, Vector3.up, Vector3.back);
         arm.eulerAngles = new Vector3(0, 0, angle);
+
+        Debug.Log(angle);
+
+
+        
+        animator.Play("Idle0");
+
+
+        if (Input.GetKeyDown("space"))
+        {
+
+        }
     }
     void FixedUpdate()
     {
