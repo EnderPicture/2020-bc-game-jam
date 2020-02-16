@@ -14,9 +14,11 @@ public class PlayerController : MonoBehaviour
     public InfluencerBubbleController influencer;
 
     public Transform arm;
-    private float savedAngle=0;
+    private float savedAngle = 0;
 
     public float health;
+
+    Vector2 input;
 
     void Start()
     {
@@ -31,46 +33,94 @@ public class PlayerController : MonoBehaviour
         arm.eulerAngles = new Vector3(0, 0, angle);
         angle += 180;
         savedAngle = angle;
-        if (angle < 22.5f || angle > 360 - 22.5f)
-        {
-            animator.Play("Idle4");
-            spriteRenderer.flipX = true;
+
+        if (input.magnitude > 0)
+        {   
+            if (angle < 22.5f || angle > 360 - 22.5f)
+            {
+                animator.Play("Walk4");
+                spriteRenderer.flipX = true;
+            }
+            if (22.5f < angle && angle < (22.5 + 45))
+            {
+                animator.Play("Walk3");
+                spriteRenderer.flipX = false;
+            }
+            if (22.5f + 45 * 1 < angle && angle < (22.5 + 45) + 45 * 1)
+            {
+                animator.Play("Walk2");
+                spriteRenderer.flipX = true;
+            }
+            if (22.5f + 45 * 2 < angle && angle < (22.5 + 45) + 45 * 2)
+            {
+                animator.Play("Walk1");
+                spriteRenderer.flipX = true;
+            }
+            if (22.5f + 45 * 3 < angle && angle < (22.5 + 45) + 45 * 3)
+            {
+                animator.Play("Walk0");
+                spriteRenderer.flipX = true;
+            }
+            if (22.5f + 45 * 4 < angle && angle < (22.5 + 45) + 45 * 4)
+            {
+                animator.Play("Walk1");
+                spriteRenderer.flipX = false;
+            }
+            if (22.5f + 45 * 5 < angle && angle < (22.5 + 45) + 45 * 5)
+            {
+                animator.Play("Walk2");
+                spriteRenderer.flipX = false;
+            }
+            if (22.5f + 45 * 6 < angle && angle < (22.5 + 45) + 45 * 6)
+            {
+                animator.Play("Walk3");
+                spriteRenderer.flipX = true;
+            }
         }
-        if (22.5f < angle && angle < (22.5 + 45))
+        else
         {
-            animator.Play("Idle3");
-            spriteRenderer.flipX = false;
+            if (angle < 22.5f || angle > 360 - 22.5f)
+            {
+                animator.Play("Idle4");
+                spriteRenderer.flipX = true;
+            }
+            if (22.5f < angle && angle < (22.5 + 45))
+            {
+                animator.Play("Idle3");
+                spriteRenderer.flipX = false;
+            }
+            if (22.5f + 45 * 1 < angle && angle < (22.5 + 45) + 45 * 1)
+            {
+                animator.Play("Idle2");
+                spriteRenderer.flipX = true;
+            }
+            if (22.5f + 45 * 2 < angle && angle < (22.5 + 45) + 45 * 2)
+            {
+                animator.Play("Idle1");
+                spriteRenderer.flipX = true;
+            }
+            if (22.5f + 45 * 3 < angle && angle < (22.5 + 45) + 45 * 3)
+            {
+                animator.Play("Idle0");
+                spriteRenderer.flipX = true;
+            }
+            if (22.5f + 45 * 4 < angle && angle < (22.5 + 45) + 45 * 4)
+            {
+                animator.Play("Idle1");
+                spriteRenderer.flipX = false;
+            }
+            if (22.5f + 45 * 5 < angle && angle < (22.5 + 45) + 45 * 5)
+            {
+                animator.Play("Idle2");
+                spriteRenderer.flipX = false;
+            }
+            if (22.5f + 45 * 6 < angle && angle < (22.5 + 45) + 45 * 6)
+            {
+                animator.Play("Idle3");
+                spriteRenderer.flipX = true;
+            }
         }
-        if (22.5f + 45 * 1 < angle && angle < (22.5 + 45) + 45 * 1)
-        {
-            animator.Play("Idle2");
-            spriteRenderer.flipX = true;
-        }
-        if (22.5f + 45 * 2 < angle && angle < (22.5 + 45) + 45 * 2)
-        {
-            animator.Play("Idle1");
-            spriteRenderer.flipX = true;
-        }
-        if (22.5f + 45 * 3 < angle && angle < (22.5 + 45) + 45 * 3)
-        {
-            animator.Play("Idle0");
-            spriteRenderer.flipX = true;
-        }
-        if (22.5f + 45 * 4 < angle && angle < (22.5 + 45) + 45 * 4)
-        {
-            animator.Play("Idle1");
-            spriteRenderer.flipX = false;
-        }
-        if (22.5f + 45 * 5 < angle && angle < (22.5 + 45) + 45 * 5)
-        {
-            animator.Play("Idle2");
-            spriteRenderer.flipX = false;
-        }
-        if (22.5f + 45 * 6 < angle && angle < (22.5 + 45) + 45 * 6)
-        {
-            animator.Play("Idle3");
-            spriteRenderer.flipX = true;
-        }
+
 
         if (Input.GetKeyDown("space"))
         {
@@ -87,7 +137,7 @@ public class PlayerController : MonoBehaviour
         float vertical = Input.GetAxisRaw("Vertical");
         float horizontal = Input.GetAxisRaw("Horizontal");
 
-        Vector2 input = new Vector2(horizontal, vertical);
+        input = new Vector2(horizontal, vertical);
         Vector3 velocity = rb.velocity;
 
         input = input.normalized;
@@ -109,7 +159,8 @@ public class PlayerController : MonoBehaviour
         rb.velocity = velocity;
     }
 
-    public float getAngle(){
+    public float getAngle()
+    {
         return savedAngle;
     }
 }
