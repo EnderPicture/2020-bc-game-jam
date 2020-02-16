@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4686294166591831099}
   - component: {fileID: 4686294166591831100}
+  - component: {fileID: -9191176384310713124}
   m_Layer: 0
   m_Name: PlayerCamera
   m_TagString: Untagged
@@ -47,6 +48,22 @@ MonoBehaviour:
   playerObject: {fileID: 0}
   cameraRadius: 2
   step: 0.05
+--- !u!114 &-9191176384310713124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4686294166591831101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f0d59ae98b2abf41a77ea8e54dc1f3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  decreaseFactor: 1
+  pistolShakeAmount: 0.15
+  pistolShakeSpeed: 80
+  pistolShakeDuration: 0.1
 --- !u!1 &4686294166803655011
 GameObject:
   m_ObjectHideFlags: 0
