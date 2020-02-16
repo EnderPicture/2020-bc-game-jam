@@ -143,6 +143,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b27160400fa0aa1499da9e56b27026b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
   pauseMenuUi: {fileID: 5931813011356811596}
 --- !u!114 &5931813009781446362
 MonoBehaviour:
@@ -157,6 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GAME_SCENE: Main
+  audioManager: {fileID: 0}
 --- !u!1 &5931813010117224812
 GameObject:
   m_ObjectHideFlags: 0
@@ -300,6 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b27160400fa0aa1499da9e56b27026b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
   pauseMenuUi: {fileID: 5931813011356811596}
 --- !u!114 &5931813010117224809
 MonoBehaviour:
@@ -314,6 +317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GAME_SCENE: Main
+  audioManager: {fileID: 0}
 --- !u!1 &5931813010358158764
 GameObject:
   m_ObjectHideFlags: 0
@@ -980,7 +984,7 @@ GameObject:
   - component: {fileID: 5931813010828129264}
   - component: {fileID: 5931813010828129228}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Pause Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1078,6 +1082,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b27160400fa0aa1499da9e56b27026b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioManager: {fileID: 0}
   pauseMenuUi: {fileID: 5931813011356811596}
 --- !u!1 &5931813011251895331
 GameObject:
@@ -1222,6 +1227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GAME_SCENE: Main
+  audioManager: {fileID: 0}
 --- !u!1 &5931813011356811596
 GameObject:
   m_ObjectHideFlags: 0

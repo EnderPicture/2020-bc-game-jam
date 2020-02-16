@@ -6,6 +6,10 @@ using UnityEngine.SceneManagement;
 public class MenuOptions : MonoBehaviour
 {
     public string GAME_SCENE = "Main";
+    public AudioManager audioManager;
+    void Start() {
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+    }
     public void ExitGame()
     {
         #if UNITY_EDITOR
@@ -17,6 +21,7 @@ public class MenuOptions : MonoBehaviour
 
     public void LoadScene()
     {
+        audioManager.playButton();
         SceneManager.LoadScene(GAME_SCENE);
     }
 }

@@ -17,11 +17,11 @@ public class Spawner : MonoBehaviour
 
     public GameObject container;
 
-    public void spawn()
+    public void spawn(int a)
     {
         if (mode == RAND)
         {
-            for (int i = 0; i < amount; i++)
+            for (int i = 0; i < a; i++)
             {
                 int rand = Random.Range(0, enemies.Length);
                 GameObject newEnemy = GameObject.Instantiate(enemies[rand]);
