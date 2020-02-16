@@ -141,10 +141,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 8742735881771845620}
-  maxMove: 1
-  accMove: 0.2
-  dampMove: 10
+  maxMoveEnemy: 1
+  accMoveEnemy: 0.1
+  dampMoveEnemy: 10
+  maxMoveFollowers: 2.5
+  accMoveFollowers: 1
+  dampMoveFollowers: 10
+  maxMoveFollowersInner: 2.5
+  accMoveFollowersInner: 5
+  dampMoveFollowersInner: 10
+  followerRadius: 3
   health: 3
+  sprite: {fileID: 5118987572439623956}
   player: {fileID: 0}
 --- !u!54 &8742735881771845620
 Rigidbody:
