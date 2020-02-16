@@ -37,6 +37,8 @@ public class EnemyController : MonoBehaviour
     public static int BOSS = 2;
     public int mode = ENEMY;
 
+    public float deathTime = 10;
+
     public GameObject bullet;
     public float coolDown;
     float lastShot;
@@ -49,6 +51,7 @@ public class EnemyController : MonoBehaviour
     public float followerShootSpread;
     public float followerHealth;
 
+    bool isDead = false;
     void Start()
     {
         maxMove = maxMoveEnemy;
@@ -62,7 +65,7 @@ public class EnemyController : MonoBehaviour
 
     void Update()
     {
-        if (mode == FOLLOWER)
+        if (isDead == false && mode == FOLLOWER)
         {
             Vector2 mousePosition = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
             float angle = Vector3.SignedAngle(mousePosition, Vector3.up, Vector3.back);
@@ -80,141 +83,148 @@ public class EnemyController : MonoBehaviour
 
     void FixedUpdate()
     {
-
-        Vector2 input = player.position - transform.position;
-        if (mode == FOLLOWER)
+        if (isDead == false)
         {
-            if (input.magnitude < followerRadius)
+            Vector2 input = player.position - transform.position;
+            input = input.normalized;
+
+
+            if (mode == FOLLOWER)
             {
-                input *= -1;
-                maxMove = maxMoveFollowersInner;
-                accMove = accMoveFollowersInner;
-                dampMove = dampMoveFollowersInner;
+                if (input.magnitude < followerRadius)
+                {
+                    input *= -1;
+                    maxMove = maxMoveFollowersInner;
+                    accMove = accMoveFollowersInner;
+                    dampMove = dampMoveFollowersInner;
+                }
+                else
+                {
+                    maxMove = maxMoveFollowers;
+                    accMove = accMoveFollowers;
+                    dampMove = dampMoveFollowers;
+                }
+            }
+            Vector3 velocity = rb.velocity;
+
+            Vector2 targetVelocity = input * maxMove;
+            Vector2 deltaVelocity = targetVelocity - new Vector2(velocity.x, velocity.y);
+
+            float angle = Vector3.SignedAngle(input, Vector3.up, Vector3.back);
+            angle += 180;
+
+            if (mode == FOLLOWER)
+            {
+                if (angle < 22.5f || angle > 360 - 22.5f)
+                {
+                    animator.Play("walkEnemyB4");
+                    sprite.flipX = true;
+                }
+                if (22.5f < angle && angle < (22.5 + 45))
+                {
+                    animator.Play("walkEnemyB3");
+                    sprite.flipX = false;
+                }
+                if (22.5f + 45 * 1 < angle && angle < (22.5 + 45) + 45 * 1)
+                {
+                    animator.Play("walkEnemyB2");
+                    sprite.flipX = true;
+                }
+                if (22.5f + 45 * 2 < angle && angle < (22.5 + 45) + 45 * 2)
+                {
+                    animator.Play("walkEnemyB1");
+                    sprite.flipX = true;
+                }
+                if (22.5f + 45 * 3 < angle && angle < (22.5 + 45) + 45 * 3)
+                {
+                    animator.Play("walkEnemyB0");
+                    sprite.flipX = true;
+                }
+                if (22.5f + 45 * 4 < angle && angle < (22.5 + 45) + 45 * 4)
+                {
+                    animator.Play("walkEnemyB1");
+                    sprite.flipX = false;
+                }
+                if (22.5f + 45 * 5 < angle && angle < (22.5 + 45) + 45 * 5)
+                {
+                    animator.Play("walkEnemyB2");
+                    sprite.flipX = false;
+                }
+                if (22.5f + 45 * 6 < angle && angle < (22.5 + 45) + 45 * 6)
+                {
+                    animator.Play("walkEnemyB3");
+                    sprite.flipX = true;
+                }
             }
             else
             {
-                maxMove = maxMoveFollowers;
-                accMove = accMoveFollowers;
-                dampMove = dampMoveFollowers;
+                if (angle < 22.5f || angle > 360 - 22.5f)
+                {
+                    animator.Play("walkEnemyR4");
+                    sprite.flipX = true;
+                }
+                if (22.5f < angle && angle < (22.5 + 45))
+                {
+                    animator.Play("walkEnemyR3");
+                    sprite.flipX = false;
+                }
+                if (22.5f + 45 * 1 < angle && angle < (22.5 + 45) + 45 * 1)
+                {
+                    animator.Play("walkEnemyR2");
+                    sprite.flipX = true;
+                }
+                if (22.5f + 45 * 2 < angle && angle < (22.5 + 45) + 45 * 2)
+                {
+                    animator.Play("walkEnemyR1");
+                    sprite.flipX = true;
+                }
+                if (22.5f + 45 * 3 < angle && angle < (22.5 + 45) + 45 * 3)
+                {
+                    animator.Play("walkEnemyR0");
+                    sprite.flipX = true;
+                }
+                if (22.5f + 45 * 4 < angle && angle < (22.5 + 45) + 45 * 4)
+                {
+                    animator.Play("walkEnemyR1");
+                    sprite.flipX = false;
+                }
+                if (22.5f + 45 * 5 < angle && angle < (22.5 + 45) + 45 * 5)
+                {
+                    animator.Play("walkEnemyR2");
+                    sprite.flipX = false;
+                }
+                if (22.5f + 45 * 6 < angle && angle < (22.5 + 45) + 45 * 6)
+                {
+                    animator.Play("walkEnemyR3");
+                    sprite.flipX = true;
+                }
             }
-        }
-        Vector3 velocity = rb.velocity;
 
-        input = input.normalized;
+            if (input.magnitude > 0)
+            {
+                deltaVelocity *= accMove;
+                rb.AddForce(deltaVelocity.x, deltaVelocity.y, 0);
+            }
+            else
+            {
+                deltaVelocity *= dampMove;
+                rb.AddForce(deltaVelocity.x, deltaVelocity.y, 0);
+            }
 
-        float angle = Vector3.SignedAngle(input, Vector3.up, Vector3.back);
-        angle += 180;
+            if (mode == BOSS && Time.realtimeSinceStartup > lastDash + nextBoost)
+            {
+                lastDash = Time.realtimeSinceStartup;
+                generateBossBoost();
+                Debug.Log("boost");
+                rb.AddForce(input.x * boostValue, input.y * boostValue, 0, ForceMode.Impulse);
+            }
 
-        if (mode == FOLLOWER)
-        {
-            if (angle < 22.5f || angle > 360 - 22.5f)
-            {
-                animator.Play("walkEnemyB4");
-                sprite.flipX = true;
-            }
-            if (22.5f < angle && angle < (22.5 + 45))
-            {
-                animator.Play("walkEnemyB3");
-                sprite.flipX = false;
-            }
-            if (22.5f + 45 * 1 < angle && angle < (22.5 + 45) + 45 * 1)
-            {
-                animator.Play("walkEnemyB2");
-                sprite.flipX = true;
-            }
-            if (22.5f + 45 * 2 < angle && angle < (22.5 + 45) + 45 * 2)
-            {
-                animator.Play("walkEnemyB1");
-                sprite.flipX = true;
-            }
-            if (22.5f + 45 * 3 < angle && angle < (22.5 + 45) + 45 * 3)
-            {
-                animator.Play("walkEnemyB0");
-                sprite.flipX = true;
-            }
-            if (22.5f + 45 * 4 < angle && angle < (22.5 + 45) + 45 * 4)
-            {
-                animator.Play("walkEnemyB1");
-                sprite.flipX = false;
-            }
-            if (22.5f + 45 * 5 < angle && angle < (22.5 + 45) + 45 * 5)
-            {
-                animator.Play("walkEnemyB2");
-                sprite.flipX = false;
-            }
-            if (22.5f + 45 * 6 < angle && angle < (22.5 + 45) + 45 * 6)
-            {
-                animator.Play("walkEnemyB3");
-                sprite.flipX = true;
-            }
-        }
-        else
-        {
-            if (angle < 22.5f || angle > 360 - 22.5f)
-            {
-                animator.Play("walkEnemyR4");
-                sprite.flipX = true;
-            }
-            if (22.5f < angle && angle < (22.5 + 45))
-            {
-                animator.Play("walkEnemyR3");
-                sprite.flipX = false;
-            }
-            if (22.5f + 45 * 1 < angle && angle < (22.5 + 45) + 45 * 1)
-            {
-                animator.Play("walkEnemyR2");
-                sprite.flipX = true;
-            }
-            if (22.5f + 45 * 2 < angle && angle < (22.5 + 45) + 45 * 2)
-            {
-                animator.Play("walkEnemyR1");
-                sprite.flipX = true;
-            }
-            if (22.5f + 45 * 3 < angle && angle < (22.5 + 45) + 45 * 3)
-            {
-                animator.Play("walkEnemyR0");
-                sprite.flipX = true;
-            }
-            if (22.5f + 45 * 4 < angle && angle < (22.5 + 45) + 45 * 4)
-            {
-                animator.Play("walkEnemyR1");
-                sprite.flipX = false;
-            }
-            if (22.5f + 45 * 5 < angle && angle < (22.5 + 45) + 45 * 5)
-            {
-                animator.Play("walkEnemyR2");
-                sprite.flipX = false;
-            }
-            if (22.5f + 45 * 6 < angle && angle < (22.5 + 45) + 45 * 6)
-            {
-                animator.Play("walkEnemyR3");
-                sprite.flipX = true;
-            }
-        }
-
-        Vector2 targetVelocity = input * maxMove;
-        Vector2 deltaVelocity = targetVelocity - new Vector2(velocity.x, velocity.y);
-
-        if (input.magnitude > 0)
-        {
-            deltaVelocity *= accMove;
-            rb.AddForce(deltaVelocity.x, deltaVelocity.y, 0);
+            rb.velocity = velocity;
         }
         else
         {
-            deltaVelocity *= dampMove;
-            rb.AddForce(deltaVelocity.x, deltaVelocity.y, 0);
+            rb.drag = 5;
         }
-
-        if (mode == BOSS && Time.realtimeSinceStartup > lastDash + nextBoost)
-        {
-            lastDash = Time.realtimeSinceStartup;
-            generateBossBoost();
-            Debug.Log("boost");
-            rb.AddForce(input.x * boostValue, input.y * boostValue, 0, ForceMode.Impulse);
-        }
-
-        rb.velocity = velocity;
     }
 
     void generateBossBoost()
@@ -235,7 +245,17 @@ public class EnemyController : MonoBehaviour
         health -= 1;
         if (health <= 0)
         {
-            GameObject.Destroy(this.gameObject);
+            if (mode != FOLLOWER)
+            {
+                gameObject.layer = LayerMask.NameToLayer("deadObj");
+                GameObject.Destroy(this.gameObject, deathTime);
+                isDead = true;
+                //change to dead animation
+            }
+            else
+            {
+                GameObject.Destroy(this.gameObject, deathTime);
+            }
         }
     }
 
@@ -248,6 +268,8 @@ public class EnemyController : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Bullet"))
         {
+            Vector2 rotated = Helper.AngleVector(other.transform.eulerAngles.z * Mathf.Deg2Rad);
+            rb.AddForce(rotated, ForceMode.Impulse);
             other.gameObject.GetComponent<BulletController>().die();
             hit();
         }

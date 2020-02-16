@@ -100,7 +100,6 @@ public class ArmController : MonoBehaviour
 
         float angle = player.getAngle();
 
-        Debug.Log(angle);
         if (angle < 10.5f || angle > 360 - 10.5f)
         {
             // down
