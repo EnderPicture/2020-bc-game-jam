@@ -77,7 +77,7 @@ public class EnemyController : MonoBehaviour
         if (22.5f < angle && angle < (22.5 + 45))
         {
             animator.Play("IdleEnemy3");
-            sprite.flipX = false;
+            sprite.flipX = true;
         }
         if (22.5f + 45 * 1 < angle && angle < (22.5 + 45) + 45 * 1)
         {
@@ -107,7 +107,7 @@ public class EnemyController : MonoBehaviour
         if (22.5f + 45 * 6 < angle && angle < (22.5 + 45) + 45 * 6)
         {
             animator.Play("IdleEnemy3");
-            sprite.flipX = true;
+            sprite.flipX = false;
         }
 
         Vector2 targetVelocity = input * maxMove;
