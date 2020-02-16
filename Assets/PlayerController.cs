@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
         float angle = Vector3.SignedAngle(mousePosition, Vector3.up, Vector3.back);
         arm.eulerAngles = new Vector3(0, 0, angle);
         angle += 180;
-
+        savedAngle = angle;
         if (angle < 22.5f || angle > 360 - 22.5f)
         {
             animator.Play("Idle4");

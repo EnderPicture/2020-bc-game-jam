@@ -102,7 +102,6 @@ public class ArmController : MonoBehaviour
             animator.Play("Armswing4");
             spriteRenderer.flipX = false;
             spriteRenderer.flipY = true;
-
         }
         if ( 22.5f < angle && angle < (22.5+45))
         {
@@ -110,6 +109,7 @@ public class ArmController : MonoBehaviour
             animator.Play("Armswing3");
             spriteRenderer.flipX = false;
             spriteRenderer.flipY = true;
+
         }
         if ( 22.5f + 45 * 1 < angle && angle < (22.5+45) + 45 * 1)
         {
