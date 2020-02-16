@@ -4,23 +4,20 @@ using UnityEngine;
 
 public class heathBar : MonoBehaviour
 {
-
-    public heathBar[] healths;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    public PlayerController player;
+    public Health[] health;
+    int hp = 10;
     // Update is called once per frame
     void Update()
     {
-        PlayerController controller = GetComponent<PlayerController>();
-
-        if (controller.health < 20f)
+        if (player.health < hp)
         {
-            Debug.Log("health bar should die");
-            gameObject.SetActive(false);
+            while (player.health < hp)
+            {
+                health[hp - 1].gameObject.SetActive(false);
+                hp--;
+            }
+            // Debug.Log("health bar should die");
         }
     }
 }
