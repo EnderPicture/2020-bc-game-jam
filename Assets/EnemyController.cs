@@ -5,9 +5,16 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
     public Rigidbody rb;
-    public float maxMove;
-    public float accMove;
-    public float dampMove;
+    public float maxMoveEnemy;
+    public float accMoveEnemy;
+    public float dampMoveEnemy;
+    public float maxMoveFollowers;
+    public float accMoveFollowers;
+    public float dampMoveFollowers;
+
+    float maxMove;
+    float accMove;
+    float dampMove;
 
     public int health;
 
@@ -15,6 +22,11 @@ public class EnemyController : MonoBehaviour
 
     void Start()
     {
+        maxMove = maxMoveEnemy;
+        accMove = accMoveEnemy;
+        dampMove = dampMoveEnemy;
+
+
         maxMove = maxMove > 0 ? maxMove : 1;
         accMove = accMove > 0 ? accMove : 1;
     }
@@ -43,13 +55,22 @@ public class EnemyController : MonoBehaviour
         rb.velocity = velocity;
     }
 
+    void convertToFollowers()
+    {
+        maxMove = maxMoveFollowers;
+        accMove = accMoveFollowers;
+        dampMove = dampMoveFollowers;
+    }
+
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Bullet")) {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Bullet"))
+        {
             other.gameObject.GetComponent<BulletController>().die();
             health -= 1;
 
-            if (health <= 0) {
+            if (health <= 0)
+            {
                 GameObject.Destroy(this.gameObject);
             }
         }
