@@ -401,6 +401,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04e935f60b8eb8a4c9b1a71eb7a78a8d, type: 3}
+--- !u!114 &2094374937 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7545655622197094435, guid: e23f8100225820243a209d3a3288e7df,
+    type: 3}
+  m_PrefabInstance: {fileID: 840850593}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 139c52d846435de46ab360654b4b091c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2969086681750585496
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -546,6 +558,11 @@ PrefabInstance:
       propertyPath: bulletsContainer
       value: 
       objectReference: {fileID: 834741915}
+    - target: {fileID: 5883219418390284247, guid: 0ae3bb9f975579847bc21de51576501a,
+        type: 3}
+      propertyPath: cameraController
+      value: 
+      objectReference: {fileID: 2094374937}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ae3bb9f975579847bc21de51576501a, type: 3}
 --- !u!1 &5883219418540364735 stripped
