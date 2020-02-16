@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuOptions : MonoBehaviour
 {
+    public string GAME_SCENE = "Main";
     public void ExitGame()
     {
         #if UNITY_EDITOR
@@ -14,8 +15,8 @@ public class MenuOptions : MonoBehaviour
         #endif
     }
 
-    public void LoadScene(string sceneName)
+    public void LoadScene()
     {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(GAME_SCENE);
     }
 }
