@@ -20,7 +20,7 @@ public class CameraShake : MonoBehaviour
     Vector3 originalPosition;
     Vector3 newPosition;
 
-    void FixedUpdate()
+    void update()
     {
         originalPosition = transform.localPosition;
         if (shakeDuration > 0)
