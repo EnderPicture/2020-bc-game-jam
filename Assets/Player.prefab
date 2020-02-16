@@ -388,6 +388,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 5883219416819092654}
   influencer: {fileID: 2738333362944545814}
   arm: {fileID: 5883219418390284246}
+  health: 5
 --- !u!54 &5883219418215427010
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -476,4 +477,4 @@ MonoBehaviour:
   shotgunBulletDuration: 0.45
   shotgunCooldown: 0.6
   shotgunKnockBack: 2
-  cameraShakeScript: {fileID: 0}
+  cameraController: {fileID: 0}
