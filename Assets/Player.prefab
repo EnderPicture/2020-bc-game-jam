@@ -465,3 +465,13 @@ MonoBehaviour:
   bulletsContainer: {fileID: 0}
   spawnPoint: {fileID: 5883219418037755467}
   rb: {fileID: 5883219418215427010}
+  pistolSpread: 8
+  pistolCooldown: 0.2
+  pistolSpeed: 1.5
+  shotgunSpread: 16
+  shotgunStartUpSpeedMax: 1.85
+  shotgunStartUpSpeedMin: 1.3
+  shotgunBulletDuration: 0.45
+  shotgunCooldown: 0.6
+  shotgunKnockBack: 2
+  cameraShakeScript: {fileID: 0}
