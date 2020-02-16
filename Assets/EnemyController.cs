@@ -156,42 +156,42 @@ public class EnemyController : MonoBehaviour
             {
                 if (angle < 22.5f || angle > 360 - 22.5f)
                 {
-                    animator.Play("walkEnemyB4");
+                    animator.Play("walkEnemyR4");
                     sprite.flipX = true;
                 }
                 if (22.5f < angle && angle < (22.5 + 45))
                 {
-                    animator.Play("walkEnemyB3");
+                    animator.Play("walkEnemyR3");
                     sprite.flipX = false;
                 }
                 if (22.5f + 45 * 1 < angle && angle < (22.5 + 45) + 45 * 1)
                 {
-                    animator.Play("walkEnemyB2");
+                    animator.Play("walkEnemyR2");
                     sprite.flipX = true;
                 }
                 if (22.5f + 45 * 2 < angle && angle < (22.5 + 45) + 45 * 2)
                 {
-                    animator.Play("walkEnemyB1");
+                    animator.Play("walkEnemyR1");
                     sprite.flipX = true;
                 }
                 if (22.5f + 45 * 3 < angle && angle < (22.5 + 45) + 45 * 3)
                 {
-                    animator.Play("walkEnemyB0");
+                    animator.Play("walkEnemyR0");
                     sprite.flipX = true;
                 }
                 if (22.5f + 45 * 4 < angle && angle < (22.5 + 45) + 45 * 4)
                 {
-                    animator.Play("walkEnemyB1");
+                    animator.Play("walkEnemyR1");
                     sprite.flipX = false;
                 }
                 if (22.5f + 45 * 5 < angle && angle < (22.5 + 45) + 45 * 5)
                 {
-                    animator.Play("walkEnemyB2");
+                    animator.Play("walkEnemyR2");
                     sprite.flipX = false;
                 }
                 if (22.5f + 45 * 6 < angle && angle < (22.5 + 45) + 45 * 6)
                 {
-                    animator.Play("walkEnemyB3");
+                    animator.Play("walkEnemyR3");
                     sprite.flipX = true;
                 }
             }
