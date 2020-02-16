@@ -1,55 +1,31 @@
 fileFormatVersion: 2
-guid: 59680fe8dd5d751439afac9b302baf61
+guid: 9f44130cf0ea62c468986113caec38e3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3203396101742816078
-    second: Pike_Idle_side_0
+      213: -5768364531109799046
+    second: onion_0
   - first:
-      213: 3156698163581954453
-    second: Pike_Idle_side_1
+      213: -1854752672915534342
+    second: onion_1
   - first:
-      213: 2361932796509189690
-    second: Pike_Idle_side_2
+      213: 4140360251420805661
+    second: onion_2
   - first:
-      213: 6736266146305715408
-    second: Pike_Idle_side_3
+      213: -6528861001174237530
+    second: onion_3
   - first:
-      213: 5665727266854045200
-    second: Pike_Idle_side_4
+      213: 2608608467829819039
+    second: onion_4
   - first:
-      213: 1411093528756581870
-    second: Pike_Idle_side_5
+      213: -3154054107094030059
+    second: onion_5
   - first:
-      213: 8820055511421483047
-    second: Pike_Idle_side_6
+      213: -4923092469584078323
+    second: onion_6
   - first:
-      213: -5827794458780412668
-    second: Pike_Idle_side_7
-  - first:
-      213: 1672532242404608519
-    second: Pike_Idle_side_8
-  - first:
-      213: -6916359772495196888
-    second: Pike_Idle_side_9
-  - first:
-      213: 6517084922621278807
-    second: Pike_Idle_side_10
-  - first:
-      213: -4141457156457448906
-    second: Pike_Idle_side_11
-  - first:
-      213: 8926529638924741909
-    second: Pike_Idle_side_12
-  - first:
-      213: 7678489037190355040
-    second: Pike_Idle_side_13
-  - first:
-      213: 1638007022694625386
-    second: Pike_Idle_side_14
-  - first:
-      213: -2007130131404522619
-    second: Pike_Idle_side_15
+      213: -7247225395366726165
+    second: onion_7
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -170,259 +146,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Pike_Idle_side_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 3240
-        width: 1920
-        height: 1080
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e4b604f38cfb47c20800000000000000
-      internalID: 3203396101742816078
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pike_Idle_side_1
-      rect:
-        serializedVersion: 2
-        x: 1920
-        y: 3240
-        width: 1920
-        height: 1080
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5992e6f3148decb20800000000000000
-      internalID: 3156698163581954453
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pike_Idle_side_2
-      rect:
-        serializedVersion: 2
-        x: 3840
-        y: 3240
-        width: 1920
-        height: 1080
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a3676474d5547c020800000000000000
-      internalID: 2361932796509189690
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pike_Idle_side_3
-      rect:
-        serializedVersion: 2
-        x: 5760
-        y: 3240
-        width: 1920
-        height: 1080
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0dcaa0bae560c7d50800000000000000
-      internalID: 6736266146305715408
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pike_Idle_side_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 2160
-        width: 1920
-        height: 1080
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 016841f4ee4b0ae40800000000000000
-      internalID: 5665727266854045200
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pike_Idle_side_5
-      rect:
-        serializedVersion: 2
-        x: 1920
-        y: 2160
-        width: 1920
-        height: 1080
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ee5736e8616359310800000000000000
-      internalID: 1411093528756581870
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pike_Idle_side_6
-      rect:
-        serializedVersion: 2
-        x: 3840
-        y: 2160
-        width: 1920
-        height: 1080
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 728f089c1c1276a70800000000000000
-      internalID: 8820055511421483047
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pike_Idle_side_7
-      rect:
-        serializedVersion: 2
-        x: 5760
-        y: 2160
-        width: 1920
-        height: 1080
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 405576411d38f1fa0800000000000000
-      internalID: -5827794458780412668
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pike_Idle_side_8
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1080
-        width: 1920
-        height: 1080
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 70a0ae78637063710800000000000000
-      internalID: 1672532242404608519
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pike_Idle_side_9
-      rect:
-        serializedVersion: 2
-        x: 1920
-        y: 1080
-        width: 1920
-        height: 1080
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 82d4f9d6e672400a0800000000000000
-      internalID: -6916359772495196888
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pike_Idle_side_10
-      rect:
-        serializedVersion: 2
-        x: 3840
-        y: 1080
-        width: 1920
-        height: 1080
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 75a35e74536517a50800000000000000
-      internalID: 6517084922621278807
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pike_Idle_side_11
-      rect:
-        serializedVersion: 2
-        x: 5760
-        y: 1080
-        width: 1920
-        height: 1080
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 63abad898a69686c0800000000000000
-      internalID: -4141457156457448906
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Pike_Idle_side_12
+      name: onion_0
       rect:
         serializedVersion: 2
         x: 0
@@ -436,14 +160,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 51dea1d696761eb70800000000000000
-      internalID: 8926529638924741909
+      spriteID: a7bdc346507a2ffa0800000000000000
+      internalID: -5768364531109799046
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pike_Idle_side_13
+      name: onion_1
       rect:
         serializedVersion: 2
         x: 1920
@@ -457,14 +181,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0685671d8197f8a60800000000000000
-      internalID: 7678489037190355040
+      spriteID: afdc9a855489246e0800000000000000
+      internalID: -1854752672915534342
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pike_Idle_side_14
+      name: onion_2
       rect:
         serializedVersion: 2
         x: 3840
@@ -478,14 +202,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a60fe4765be5bb610800000000000000
-      internalID: 1638007022694625386
+      spriteID: d1a851c46b3857930800000000000000
+      internalID: 4140360251420805661
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Pike_Idle_side_15
+      name: onion_3
       rect:
         serializedVersion: 2
         x: 5760
@@ -499,8 +223,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58b76ab97cd3524e0800000000000000
-      internalID: -2007130131404522619
+      spriteID: 6aebb15c283d465a0800000000000000
+      internalID: -6528861001174237530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: onion_4
+      rect:
+        serializedVersion: 2
+        x: 7680
+        y: 0
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f96821b9493a33420800000000000000
+      internalID: 2608608467829819039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: onion_5
+      rect:
+        serializedVersion: 2
+        x: 9600
+        y: 0
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5196c40208c8a34d0800000000000000
+      internalID: -3154054107094030059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: onion_6
+      rect:
+        serializedVersion: 2
+        x: 11520
+        y: 0
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0a5a0a8b79adabb0800000000000000
+      internalID: -4923092469584078323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: onion_7
+      rect:
+        serializedVersion: 2
+        x: 13440
+        y: 0
+        width: 1920
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be5f9fd76eeac6b90800000000000000
+      internalID: -7247225395366726165
       vertices: []
       indices: 
       edges: []
@@ -508,7 +316,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: d7cfe6ec74594b1499a4184673c2463a
     internalID: 0
     vertices: []
     indices: 
