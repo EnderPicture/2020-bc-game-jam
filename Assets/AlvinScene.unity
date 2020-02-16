@@ -137,8 +137,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bcc8fc27b0ab2884eb25905cd4398e5f, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &116055209 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5883219418215427013, guid: 0ae3bb9f975579847bc21de51576501a,
@@ -155,8 +155,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5bc061c13e4828949bf63a85dc6965c5, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &531527806 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5883219418215427008, guid: 0ae3bb9f975579847bc21de51576501a,
@@ -307,8 +307,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 337c35e9319cbdd449389f763ed39b81, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Name: 
+  m_EditorClassIdentifier: 
   spawner:
   - {fileID: 30535744}
 --- !u!4 &873994860
@@ -396,7 +396,7 @@ PrefabInstance:
     - target: {fileID: 7545655622197094435, guid: e23f8100225820243a209d3a3288e7df,
         type: 3}
       propertyPath: playerObject
-      value:
+      value: 
       objectReference: {fileID: 116055209}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e23f8100225820243a209d3a3288e7df, type: 3}
@@ -427,7 +427,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
-  m_WarningMessage:
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
@@ -446,7 +446,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2035669847, guid: 8b3228a09bfa5e941a13e329d25c25e9, type: 3}
       propertyPath: player
-      value:
+      value: 
       objectReference: {fileID: 531527806}
     - target: {fileID: 2969086682407869389, guid: 8b3228a09bfa5e941a13e329d25c25e9,
         type: 3}
@@ -535,7 +535,7 @@ PrefabInstance:
     - target: {fileID: 5883219418096223542, guid: 0ae3bb9f975579847bc21de51576501a,
         type: 3}
       propertyPath: m_Sprite
-      value:
+      value: 
       objectReference: {fileID: 670618069063216245, guid: 7ecaa175d7b72478daafd5248d5fa17e,
         type: 3}
     - target: {fileID: 5883219418096223542, guid: 0ae3bb9f975579847bc21de51576501a,
@@ -626,27 +626,27 @@ PrefabInstance:
     - target: {fileID: 5883219418390284247, guid: 0ae3bb9f975579847bc21de51576501a,
         type: 3}
       propertyPath: bulletsContainer
-      value:
+      value: 
       objectReference: {fileID: 834741915}
     - target: {fileID: 5883219418390284247, guid: 0ae3bb9f975579847bc21de51576501a,
         type: 3}
       propertyPath: cameraShakeScript
-      value:
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5883219418390284247, guid: 0ae3bb9f975579847bc21de51576501a,
         type: 3}
       propertyPath: spriteRenderer
-      value:
+      value: 
       objectReference: {fileID: 1680733247}
     - target: {fileID: 5883219418390284247, guid: 0ae3bb9f975579847bc21de51576501a,
         type: 3}
       propertyPath: animator
-      value:
+      value: 
       objectReference: {fileID: 1680733248}
     - target: {fileID: 5883219418390284247, guid: 0ae3bb9f975579847bc21de51576501a,
         type: 3}
       propertyPath: player
-      value:
+      value: 
       objectReference: {fileID: 116055212}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ae3bb9f975579847bc21de51576501a, type: 3}
@@ -660,22 +660,22 @@ PrefabInstance:
     - target: {fileID: 7436308962937206949, guid: 04e935f60b8eb8a4c9b1a71eb7a78a8d,
         type: 3}
       propertyPath: player
-      value:
+      value: 
       objectReference: {fileID: 531527806}
     - target: {fileID: 7436308962937206949, guid: 04e935f60b8eb8a4c9b1a71eb7a78a8d,
         type: 3}
       propertyPath: tl
-      value:
+      value: 
       objectReference: {fileID: 600746341}
     - target: {fileID: 7436308962937206949, guid: 04e935f60b8eb8a4c9b1a71eb7a78a8d,
         type: 3}
       propertyPath: br
-      value:
+      value: 
       objectReference: {fileID: 1718302443}
     - target: {fileID: 7436308962937206949, guid: 04e935f60b8eb8a4c9b1a71eb7a78a8d,
         type: 3}
       propertyPath: amount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7436308962937207002, guid: 04e935f60b8eb8a4c9b1a71eb7a78a8d,
         type: 3}

@@ -204,7 +204,7 @@ public class EnemyController : MonoBehaviour
 
     void OnCollisionStay(Collision other)
     {
-        if (mode == ENEMY)
+        if (mode == ENEMY || mode == BOSS)
         {
             if (other.gameObject.layer == LayerMask.NameToLayer("Followers"))
             {
