@@ -86,9 +86,6 @@ public class EnemyController : MonoBehaviour
         if (isDead == false)
         {
             Vector2 input = player.position - transform.position;
-            input = input.normalized;
-
-
             if (mode == FOLLOWER)
             {
                 if (input.magnitude < followerRadius)
@@ -107,14 +104,13 @@ public class EnemyController : MonoBehaviour
             }
             Vector3 velocity = rb.velocity;
 
-            Vector2 targetVelocity = input * maxMove;
-            Vector2 deltaVelocity = targetVelocity - new Vector2(velocity.x, velocity.y);
+            input = input.normalized;
 
             float angle = Vector3.SignedAngle(input, Vector3.up, Vector3.back);
             angle += 180;
-
             if (mode == FOLLOWER)
             {
+
                 if (angle < 22.5f || angle > 360 - 22.5f)
                 {
                     animator.Play("walkEnemyB4");
@@ -160,45 +156,48 @@ public class EnemyController : MonoBehaviour
             {
                 if (angle < 22.5f || angle > 360 - 22.5f)
                 {
-                    animator.Play("walkEnemyR4");
+                    animator.Play("walkEnemyB4");
                     sprite.flipX = true;
                 }
                 if (22.5f < angle && angle < (22.5 + 45))
                 {
-                    animator.Play("walkEnemyR3");
+                    animator.Play("walkEnemyB3");
                     sprite.flipX = false;
                 }
                 if (22.5f + 45 * 1 < angle && angle < (22.5 + 45) + 45 * 1)
                 {
-                    animator.Play("walkEnemyR2");
+                    animator.Play("walkEnemyB2");
                     sprite.flipX = true;
                 }
                 if (22.5f + 45 * 2 < angle && angle < (22.5 + 45) + 45 * 2)
                 {
-                    animator.Play("walkEnemyR1");
+                    animator.Play("walkEnemyB1");
                     sprite.flipX = true;
                 }
                 if (22.5f + 45 * 3 < angle && angle < (22.5 + 45) + 45 * 3)
                 {
-                    animator.Play("walkEnemyR0");
+                    animator.Play("walkEnemyB0");
                     sprite.flipX = true;
                 }
                 if (22.5f + 45 * 4 < angle && angle < (22.5 + 45) + 45 * 4)
                 {
-                    animator.Play("walkEnemyR1");
+                    animator.Play("walkEnemyB1");
                     sprite.flipX = false;
                 }
                 if (22.5f + 45 * 5 < angle && angle < (22.5 + 45) + 45 * 5)
                 {
-                    animator.Play("walkEnemyR2");
+                    animator.Play("walkEnemyB2");
                     sprite.flipX = false;
                 }
                 if (22.5f + 45 * 6 < angle && angle < (22.5 + 45) + 45 * 6)
                 {
-                    animator.Play("walkEnemyR3");
+                    animator.Play("walkEnemyB3");
                     sprite.flipX = true;
                 }
             }
+
+            Vector2 targetVelocity = input * maxMove;
+            Vector2 deltaVelocity = targetVelocity - new Vector2(velocity.x, velocity.y);
 
             if (input.magnitude > 0)
             {
@@ -229,6 +228,7 @@ public class EnemyController : MonoBehaviour
 
     void generateBossBoost()
     {
+
         nextBoost = Random.Range(boostTimingRange.x, boostTimingRange.y);
     }
 
