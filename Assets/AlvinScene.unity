@@ -388,6 +388,18 @@ PrefabInstance:
       objectReference: {fileID: 116055209}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e23f8100225820243a209d3a3288e7df, type: 3}
+--- !u!114 &1534606626 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7545655622197094435, guid: e23f8100225820243a209d3a3288e7df,
+    type: 3}
+  m_PrefabInstance: {fileID: 954296804}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 139c52d846435de46ab360654b4b091c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1718302443 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5084719287156435108, guid: 04e935f60b8eb8a4c9b1a71eb7a78a8d,
@@ -544,6 +556,11 @@ PrefabInstance:
       propertyPath: cameraShakeScript
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5883219418390284247, guid: 0ae3bb9f975579847bc21de51576501a,
+        type: 3}
+      propertyPath: cameraController
+      value: 
+      objectReference: {fileID: 1534606626}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ae3bb9f975579847bc21de51576501a, type: 3}
 --- !u!1001 &7436308962908899557
