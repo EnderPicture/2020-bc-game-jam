@@ -68,6 +68,7 @@ public class EnemyController : MonoBehaviour
         input = input.normalized;
 
         float angle = Vector3.SignedAngle(input, Vector3.up, Vector3.back);
+        angle += 180;
         if (angle < 22.5f || angle > 360 - 22.5f)
         {
             animator.Play("IdleEnemy4");
