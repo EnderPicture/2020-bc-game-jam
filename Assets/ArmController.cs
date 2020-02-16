@@ -27,10 +27,12 @@ public class ArmController : MonoBehaviour
     public SpriteRenderer spriteRenderer;
 
     public CameraController cameraController;
+    public AudioManager audioManager;
 
     void Start()
     {
         cameraController = GameObject.Find("PlayerCamera").GetComponent<CameraController>();
+        audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
     }
 
     void pistol()
@@ -50,6 +52,7 @@ public class ArmController : MonoBehaviour
 
         rb.AddForce(force, ForceMode.Impulse);
         cameraController.pistolShake();
+        audioManager.playShootPistol();
     }
 
     void shotgun()
@@ -59,6 +62,7 @@ public class ArmController : MonoBehaviour
         }
         coolDown = shotgunCooldown;
         cameraController.shotgunShake();
+        audioManager.playShootShotgun();
     }
 
     void shotGunBullet()
@@ -86,12 +90,12 @@ public class ArmController : MonoBehaviour
     void Update()
     {
         float time = Time.realtimeSinceStartup;
-        if (Input.GetMouseButton(0) && time > lastShot + coolDown)
+        if (Input.GetMouseButton(0) && time > lastShot + coolDown && PauseMenu.GameIsPaused != true)
         {
             lastShot = time;
             shotgun();
         }
-        else if (Input.GetMouseButton(1) && time > lastShot + coolDown)
+        else if (Input.GetMouseButton(1) && time > lastShot + coolDown && PauseMenu.GameIsPaused != true)
         {
             lastShot = time;
             pistol();
