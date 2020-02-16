@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
 
     public Animator animator;
     public SpriteRenderer spriteRenderer;
+    public InfluencerBubbleController influencer;
 
     public Transform arm;
 
@@ -68,7 +69,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown("space"))
         {
-
+            influencer.influence();
         }
     }
     void FixedUpdate()

@@ -6,23 +6,24 @@ public class InfluencerBubbleController : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    List<GameObject> stuffInBubble = new List<GameObject>();
+    List<EnemyController> stuffInBubble = new List<EnemyController>();
     void Start()
     {
 
     }
 
-    // Update is called once per frame
-    void Update()
+    public void influence()
     {
-        Debug.Log(stuffInBubble.Count);
+        foreach (EnemyController enemy in stuffInBubble) {
+            enemy.convertToFollowers();
+        }
     }
 
     void OnTriggerStay(Collider other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            stuffInBubble.Add(other.gameObject);
+            stuffInBubble.Add(other.gameObject.GetComponent<EnemyController>());
         }
     }
 
