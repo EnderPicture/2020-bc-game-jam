@@ -7,8 +7,11 @@ public class MenuOptions : MonoBehaviour
 {
     public void ExitGame()
     {
-        Debug.Log("Yikes");
+        #if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+        #else
         Application.Quit();
+        #endif
     }
 
     public void LoadScene(string sceneName)
