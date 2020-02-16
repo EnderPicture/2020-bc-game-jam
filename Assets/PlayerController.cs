@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
 
     public float health;
 
+    Vector2 input;
+
     void Start()
     {
         maxMove = maxMove > 0 ? maxMove : 1;
@@ -31,54 +33,112 @@ public class PlayerController : MonoBehaviour
         arm.eulerAngles = new Vector3(0, 0, angle);
         angle += 180;
         savedAngle = angle;
-        if (angle < 10.5f || angle > 360 - 10.5f)
+
+        if (input.magnitude > 0)
         {
-            // down
-            animator.Play("Idle4");
-            spriteRenderer.flipX = true;
+            if (angle < 10.5f || angle > 360 - 10.5f)
+            {
+                // down
+                animator.Play("Walk4");
+                spriteRenderer.flipX = true;
+            }
+            if (10.5f < angle && angle < (22.5 + 10.5f + 45))
+            {
+                // down right
+                animator.Play("Walk3");
+                spriteRenderer.flipX = false;
+            }
+            if (22.5f + 10.5f + 45 * 1 < angle && angle < (22.5 + 10.5f + 45) + 45 * 1)
+            {
+                // right
+                animator.Play("Walk2");
+                spriteRenderer.flipX = true;
+            }
+            if (22.5f + 10.5f + 45 * 2 < angle && angle < (22.5 + 15.5f + 45) + 45 * 2)
+            {
+                // up right
+                animator.Play("Walk1");
+                spriteRenderer.flipX = true;
+            }
+            if (22.5f + 15.5f + 45 * 3 < angle && angle < (22.5 - 15.5f + 45) + 45 * 3)
+            {
+                // up
+                animator.Play("Walk0");
+                spriteRenderer.flipX = true;
+            }
+            if (22.5f - 15.5f + 45 * 4 < angle && angle < (22.5 - 10.5f + 45) + 45 * 4)
+            {
+                // up left
+                animator.Play("Walk1");
+                spriteRenderer.flipX = false;
+            }
+            if (22.5f - 10.5f + 45 * 5 < angle && angle < (22.5 - 10.5f + 45) + 45 * 5)
+            {
+                // left
+                animator.Play("Walk2");
+                spriteRenderer.flipX = false;
+            }
+            if (22.5f - 10.5f + 45 * 6 < angle && angle < (22.5 + 45 + 10.5f) + 45 * 6)
+            {
+                // down left
+                animator.Play("Walk3");
+                spriteRenderer.flipX = true;
+            }
         }
-        if (10.5f < angle && angle < (22.5 + 10.5f +45))
+        else
         {
-            // down right
-            animator.Play("Idle3");
-            spriteRenderer.flipX = false;
+            if (angle < 10.5f || angle > 360 - 10.5f)
+            {
+                // down
+                animator.Play("Idle4");
+                spriteRenderer.flipX = true;
+            }
+            if (10.5f < angle && angle < (22.5 + 10.5f + 45))
+            {
+                // down right
+                animator.Play("Idle3");
+                spriteRenderer.flipX = false;
+            }
+            if (22.5f + 10.5f + 45 * 1 < angle && angle < (22.5 + 10.5f + 45) + 45 * 1)
+            {
+                // right
+                animator.Play("Idle2");
+                spriteRenderer.flipX = true;
+            }
+            if (22.5f + 10.5f + 45 * 2 < angle && angle < (22.5 + 15.5f + 45) + 45 * 2)
+            {
+                // up right
+                animator.Play("Idle1");
+                spriteRenderer.flipX = true;
+            }
+            if (22.5f + 15.5f + 45 * 3 < angle && angle < (22.5 - 15.5f + 45) + 45 * 3)
+            {
+                // up
+                animator.Play("Idle0");
+                spriteRenderer.flipX = true;
+            }
+            if (22.5f - 15.5f + 45 * 4 < angle && angle < (22.5 - 10.5f + 45) + 45 * 4)
+            {
+                // up left
+                animator.Play("Idle1");
+                spriteRenderer.flipX = false;
+            }
+            if (22.5f - 10.5f + 45 * 5 < angle && angle < (22.5 - 10.5f + 45) + 45 * 5)
+            {
+                // left
+                animator.Play("Idle2");
+                spriteRenderer.flipX = false;
+            }
+            if (22.5f - 10.5f + 45 * 6 < angle && angle < (22.5 + 45 + 10.5f) + 45 * 6)
+            {
+                // down left
+                animator.Play("Idle3");
+                spriteRenderer.flipX = true;
+            }
+
         }
-        if (22.5f + 10.5f + 45 * 1 < angle && angle < (22.5 + 10.5f + 45) + 45 * 1)
-        {
-            // right
-            animator.Play("Idle2");
-            spriteRenderer.flipX = true;
-        }
-        if (22.5f + 10.5f + 45 * 2 < angle && angle < (22.5 + 15.5f + 45) + 45 * 2)
-        {
-            // up right
-            animator.Play("Idle1");
-            spriteRenderer.flipX = true;
-        }
-        if (22.5f + 15.5f + 45 * 3 < angle && angle < (22.5 - 15.5f + 45) + 45 * 3)
-        {
-            // up
-            animator.Play("Idle0");
-            spriteRenderer.flipX = true;
-        }
-        if (22.5f - 15.5f + 45 * 4 < angle && angle < (22.5 -10.5f + 45) + 45 * 4)
-        {
-            // up left
-            animator.Play("Idle1");
-            spriteRenderer.flipX = false;
-        }
-        if (22.5f - 10.5f + 45 * 5 < angle && angle < (22.5 - 10.5f + 45) + 45 * 5)
-        {
-            // left
-            animator.Play("Idle2");
-            spriteRenderer.flipX = false;
-        }
-        if (22.5f - 10.5f + 45 * 6 < angle && angle < (22.5 + 45 + 10.5f) + 45 * 6)
-        {
-            // down left
-            animator.Play("Idle3");
-            spriteRenderer.flipX = true;
-        }
+
+
 
         if (Input.GetKeyDown("space"))
         {
@@ -88,6 +148,7 @@ public class PlayerController : MonoBehaviour
 
     public void hit()
     {
+        Debug.Log("player Hit!");
         health -= 1;
     }
     void FixedUpdate()
@@ -95,7 +156,7 @@ public class PlayerController : MonoBehaviour
         float vertical = Input.GetAxisRaw("Vertical");
         float horizontal = Input.GetAxisRaw("Horizontal");
 
-        Vector2 input = new Vector2(horizontal, vertical);
+        input = new Vector2(horizontal, vertical);
         Vector3 velocity = rb.velocity;
 
         input = input.normalized;

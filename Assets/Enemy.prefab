@@ -26,8 +26,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2969086681077075049}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.004, y: 0.439, z: 0}
-  m_LocalScale: {x: 0.74950045, y: 0.74950045, z: 0.74950045}
+  m_LocalPosition: {x: -0.086, y: 0.469, z: 0}
+  m_LocalScale: {x: 1.6253293, y: 1.6253293, z: 1.6253293}
   m_Children: []
   m_Father: {fileID: 2969086682653700079}
   m_RootOrder: 0
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3154054107094030059, guid: 9f44130cf0ea62c468986113caec38e3,
+  m_Sprite: {fileID: 5769278565624104565, guid: b443bb45b32e4ba4cb098c988ce94335,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -162,8 +162,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 8742735881771845620}
-  maxMoveEnemy: 1
-  accMoveEnemy: 0.1
+  maxMoveEnemy: 6.2
+  accMoveEnemy: 2.5
   dampMoveEnemy: 10
   maxMoveFollowers: 2.5
   accMoveFollowers: 0.5
@@ -174,7 +174,7 @@ MonoBehaviour:
   animator: {fileID: 4627522106053456233}
   attackCoolDown: 0.5
   followerRadius: 3
-  health: 3
+  health: 1
   sprite: {fileID: 5118987572439623956}
   player: {fileID: 0}
   mode: 0
@@ -182,6 +182,8 @@ MonoBehaviour:
   coolDown: 0.3
   boostValue: 0.5
   boostTimingRange: {x: 1, y: 3}
+  followerShootSpread: 0
+  followerHealth: 0
 --- !u!54 &8742735881771845620
 Rigidbody:
   m_ObjectHideFlags: 0

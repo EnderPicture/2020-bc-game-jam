@@ -402,7 +402,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 5883219418215427010}
-  maxMove: 3
+  maxMove: 7
   accMove: 5
   dampMove: 10
   animator: {fileID: 1793695505}

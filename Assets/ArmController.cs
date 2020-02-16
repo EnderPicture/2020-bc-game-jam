@@ -15,6 +15,7 @@ public class ArmController : MonoBehaviour
     public float pistolSpread = 8.0f;
     public float pistolCooldown = 0.2f;
     public float pistolSpeed = 1.5f;
+    public int shotgunBullets = 5;
     public float shotgunSpread;
     public float shotgunStartUpSpeedMax;
     public float shotgunStartUpSpeedMin;
@@ -56,11 +57,9 @@ public class ArmController : MonoBehaviour
 
     void shotgun()
     {
-        shotGunBullet();
-        shotGunBullet();
-        shotGunBullet();
-        shotGunBullet();
-        shotGunBullet();
+        for (int i = 0; i < shotgunBullets; i++) {
+            shotGunBullet();
+        }
         coolDown = shotgunCooldown;
         cameraController.shotgunShake();
         audioManager.playShootShotgun();
@@ -105,7 +104,6 @@ public class ArmController : MonoBehaviour
 
         float angle = player.getAngle();
 
-        Debug.Log(angle);
         if (angle < 10.5f || angle > 360 - 10.5f)
         {
             // down
