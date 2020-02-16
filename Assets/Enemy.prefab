@@ -162,8 +162,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 8742735881771845620}
-  maxMoveEnemy: 1
-  accMoveEnemy: 0.1
+  maxMoveEnemy: 6.2
+  accMoveEnemy: 2.5
   dampMoveEnemy: 10
   maxMoveFollowers: 2.5
   accMoveFollowers: 0.5
@@ -174,7 +174,7 @@ MonoBehaviour:
   animator: {fileID: 4627522106053456233}
   attackCoolDown: 0.5
   followerRadius: 3
-  health: 3
+  health: 1
   sprite: {fileID: 5118987572439623956}
   player: {fileID: 0}
   mode: 0
