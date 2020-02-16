@@ -2,32 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class EnemyController : MonoBehaviour
 {
     public Rigidbody rb;
     public float maxMove;
     public float accMove;
     public float dampMove;
 
-    public Transform arm;
+    public int health;
+
+    public Transform player;
 
     void Start()
     {
         maxMove = maxMove > 0 ? maxMove : 1;
         accMove = accMove > 0 ? accMove : 1;
     }
-    void Update()
-    {
-        Vector2 mousePosition = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
-        float angle = Vector3.SignedAngle(mousePosition, Vector3.up, Vector3.back);
-        arm.eulerAngles = new Vector3(0, 0, angle);
-    }
     void FixedUpdate()
     {
-        float vertical = Input.GetAxisRaw("Vertical");
-        float horizontal = Input.GetAxisRaw("Horizontal");
 
-        Vector2 input = new Vector2(horizontal, vertical);
+        Vector2 input = player.position - this.transform.position;
         Vector3 velocity = rb.velocity;
 
         input = input.normalized;
@@ -47,5 +41,17 @@ public class PlayerController : MonoBehaviour
         }
 
         rb.velocity = velocity;
+    }
+
+    void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Bullet")) {
+            other.gameObject.GetComponent<BulletController>().die();
+            health -= 1;
+
+            if (health <= 0) {
+                GameObject.Destroy(this.gameObject);
+            }
+        }
     }
 }

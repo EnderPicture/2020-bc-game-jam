@@ -167,7 +167,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5883219418037755466}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.173, z: 0}
+  m_LocalPosition: {x: 0, y: 0.42, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5883219418390284246}
@@ -266,7 +266,7 @@ GameObject:
   - component: {fileID: 5883219418215427009}
   - component: {fileID: 5883219418215427010}
   - component: {fileID: 5883219418215427011}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -384,3 +384,13 @@ MonoBehaviour:
   coolDown: 0.2
   bulletsContainer: {fileID: 0}
   spawnPoint: {fileID: 5883219418037755467}
+  rb: {fileID: 5883219418215427010}
+  pistolSpread: 8
+  pistolCooldown: 0.2
+  pistolSpeed: 1.5
+  shotgunSpread: 16
+  shotgunStartUpSpeedMax: 1.5
+  shotgunStartUpSpeedMin: 1.15
+  shotgunBulletDuration: 0.6
+  shotgunCooldown: 0.75
+  shotgunKnockBack: 2
