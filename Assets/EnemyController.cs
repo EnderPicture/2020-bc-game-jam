@@ -86,9 +86,6 @@ public class EnemyController : MonoBehaviour
         if (isDead == false)
         {
             Vector2 input = player.position - transform.position;
-            input = input.normalized;
-
-
             if (mode == FOLLOWER)
             {
                 if (input.magnitude < followerRadius)
@@ -107,14 +104,13 @@ public class EnemyController : MonoBehaviour
             }
             Vector3 velocity = rb.velocity;
 
-            Vector2 targetVelocity = input * maxMove;
-            Vector2 deltaVelocity = targetVelocity - new Vector2(velocity.x, velocity.y);
+            input = input.normalized;
 
             float angle = Vector3.SignedAngle(input, Vector3.up, Vector3.back);
             angle += 180;
-
             if (mode == FOLLOWER)
             {
+
                 if (angle < 22.5f || angle > 360 - 22.5f)
                 {
                     animator.Play("walkEnemyB4");
@@ -200,6 +196,9 @@ public class EnemyController : MonoBehaviour
                 }
             }
 
+            Vector2 targetVelocity = input * maxMove;
+            Vector2 deltaVelocity = targetVelocity - new Vector2(velocity.x, velocity.y);
+
             if (input.magnitude > 0)
             {
                 deltaVelocity *= accMove;
@@ -229,6 +228,7 @@ public class EnemyController : MonoBehaviour
 
     void generateBossBoost()
     {
+
         nextBoost = Random.Range(boostTimingRange.x, boostTimingRange.y);
     }
 
