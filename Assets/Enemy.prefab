@@ -172,10 +172,16 @@ MonoBehaviour:
   accMoveFollowersInner: 10
   dampMoveFollowersInner: 10
   animator: {fileID: 4627522106053456233}
+  attackCoolDown: 0.5
   followerRadius: 3
   health: 3
   sprite: {fileID: 5118987572439623956}
   player: {fileID: 0}
+  mode: 2
+  bullet: {fileID: 5653734091636336881, guid: d2da582b37858f34f826271b90a21242, type: 3}
+  coolDown: 0.3
+  boostValue: 0.5
+  boostTimingRange: {x: 1, y: 3}
 --- !u!54 &8742735881771845620
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     public Transform arm;
     private float savedAngle=0;
 
+    public float health;
+
     void Start()
     {
         maxMove = maxMove > 0 ? maxMove : 1;
@@ -28,42 +30,43 @@ public class PlayerController : MonoBehaviour
         float angle = Vector3.SignedAngle(mousePosition, Vector3.up, Vector3.back);
         arm.eulerAngles = new Vector3(0, 0, angle);
         angle += 180;
-        savedAngle = angle;
-        if (angle < 22.5f || angle > 360 - 22.5f) {
+
+        if (angle < 22.5f || angle > 360 - 22.5f)
+        {
             animator.Play("Idle4");
             spriteRenderer.flipX = true;
         }
-        if ( 22.5f < angle && angle < (22.5+45))
+        if (22.5f < angle && angle < (22.5 + 45))
         {
             animator.Play("Idle3");
             spriteRenderer.flipX = false;
         }
-        if ( 22.5f + 45 * 1 < angle && angle < (22.5+45) + 45 * 1)
+        if (22.5f + 45 * 1 < angle && angle < (22.5 + 45) + 45 * 1)
         {
             animator.Play("Idle2");
             spriteRenderer.flipX = true;
         }
-        if ( 22.5f + 45 * 2 < angle && angle < (22.5+45) + 45 * 2)
+        if (22.5f + 45 * 2 < angle && angle < (22.5 + 45) + 45 * 2)
         {
             animator.Play("Idle1");
             spriteRenderer.flipX = true;
         }
-        if ( 22.5f + 45 * 3 < angle && angle < (22.5+45) + 45 * 3)
+        if (22.5f + 45 * 3 < angle && angle < (22.5 + 45) + 45 * 3)
         {
             animator.Play("Idle0");
             spriteRenderer.flipX = true;
         }
-        if ( 22.5f + 45 * 4 < angle && angle < (22.5+45) + 45 * 4)
+        if (22.5f + 45 * 4 < angle && angle < (22.5 + 45) + 45 * 4)
         {
             animator.Play("Idle1");
             spriteRenderer.flipX = false;
         }
-        if ( 22.5f + 45 * 5 < angle && angle < (22.5+45) + 45 * 5)
+        if (22.5f + 45 * 5 < angle && angle < (22.5 + 45) + 45 * 5)
         {
             animator.Play("Idle2");
             spriteRenderer.flipX = false;
         }
-        if ( 22.5f + 45 * 6 < angle && angle < (22.5+45) + 45 * 6)
+        if (22.5f + 45 * 6 < angle && angle < (22.5 + 45) + 45 * 6)
         {
             animator.Play("Idle3");
             spriteRenderer.flipX = true;
@@ -73,6 +76,11 @@ public class PlayerController : MonoBehaviour
         {
             influencer.influence();
         }
+    }
+
+    public void hit()
+    {
+        health -= 1;
     }
     void FixedUpdate()
     {

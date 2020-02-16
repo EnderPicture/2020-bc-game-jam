@@ -73,7 +73,6 @@ public class ArmController : MonoBehaviour
             Random.Range(shotgunStartUpSpeedMin, shotgunStartUpSpeedMax);
 
         bulletController.GetComponent<BulletController>().health = shotgunBulletDuration;
-        Debug.Log(bulletController.GetComponent<BulletController>().health);
 
         Vector2 force = Helper.AngleVector((transform.eulerAngles.z - 90) * Mathf.Deg2Rad) * shotgunKnockBack;
 

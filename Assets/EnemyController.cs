@@ -17,6 +17,10 @@ public class EnemyController : MonoBehaviour
 
     public Animator animator;
 
+    public float attackCoolDown;
+    float attackLastTime;
+
+
     public float followerRadius;
 
     float maxMove;
@@ -30,7 +34,17 @@ public class EnemyController : MonoBehaviour
 
     public static int ENEMY = 0;
     public static int FOLLOWER = 1;
-    int mode = ENEMY;
+    public static int BOSS = 2;
+    public int mode = ENEMY;
+
+    public GameObject bullet;
+    public float coolDown;
+    float lastShot;
+
+    public float boostValue;
+    public Vector2 boostTimingRange;
+    float nextBoost;
+    float lastDash;
 
     void Start()
     {
@@ -40,8 +54,26 @@ public class EnemyController : MonoBehaviour
 
         maxMove = maxMove > 0 ? maxMove : 1;
         accMove = accMove > 0 ? accMove : 1;
+        generateBossBoost();
     }
 
+    void Update()
+    {
+        if (mode == FOLLOWER)
+        {
+            Vector2 mousePosition = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
+            float angle = Vector3.SignedAngle(mousePosition, Vector3.up, Vector3.back);
+
+            float time = Time.realtimeSinceStartup;
+            if (Input.GetMouseButton(0) && time > lastShot + coolDown)
+            {
+                lastShot = time;
+                Quaternion bulletSpread = Quaternion.Euler(new Vector3(0, 0, angle));
+                GameObject newBullet = GameObject.Instantiate(bullet, transform.position, bulletSpread);
+            }
+
+        }
+    }
 
     void FixedUpdate()
     {
@@ -124,7 +156,20 @@ public class EnemyController : MonoBehaviour
             rb.AddForce(deltaVelocity.x, deltaVelocity.y, 0);
         }
 
+        if (mode == BOSS && Time.realtimeSinceStartup > lastDash + nextBoost)
+        {
+            lastDash = Time.realtimeSinceStartup;
+            generateBossBoost();
+            Debug.Log("boost");
+            rb.AddForce(input.x * boostValue, input.y * boostValue, 0, ForceMode.Impulse);
+        }
+
         rb.velocity = velocity;
+    }
+
+    void generateBossBoost() {
+        
+        nextBoost = Random.Range(boostTimingRange.x, boostTimingRange.y);
     }
 
     public void convertToFollowers()
@@ -134,16 +179,52 @@ public class EnemyController : MonoBehaviour
         sprite.color = new Color(1, 0, 0);
     }
 
+    public void hit()
+    {
+        health -= 1;
+        if (health <= 0)
+        {
+            GameObject.Destroy(this.gameObject);
+        }
+    }
+
+    public int getMode()
+    {
+        return mode;
+    }
+
     void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Bullet"))
         {
             other.gameObject.GetComponent<BulletController>().die();
-            health -= 1;
+            hit();
+        }
+    }
 
-            if (health <= 0)
+    void OnCollisionStay(Collision other)
+    {
+        if (mode == ENEMY)
+        {
+            if (other.gameObject.layer == LayerMask.NameToLayer("Followers"))
             {
-                GameObject.Destroy(this.gameObject);
+                EnemyController collidedEnemy = other.gameObject.GetComponent<EnemyController>();
+                float time = Time.realtimeSinceStartup;
+                if (time > attackLastTime + attackCoolDown)
+                {
+                    attackLastTime = time;
+                    collidedEnemy.hit();
+                }
+            }
+            if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
+            {
+                PlayerController player = other.gameObject.GetComponent<PlayerController>();
+                float time = Time.realtimeSinceStartup;
+                if (time > attackLastTime + attackCoolDown)
+                {
+                    attackLastTime = time;
+                    player.hit();
+                }
             }
         }
     }
