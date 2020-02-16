@@ -177,7 +177,7 @@ MonoBehaviour:
   health: 3
   sprite: {fileID: 5118987572439623956}
   player: {fileID: 0}
-  mode: 2
+  mode: 0
   bullet: {fileID: 5653734091636336881, guid: d2da582b37858f34f826271b90a21242, type: 3}
   coolDown: 0.3
   boostValue: 0.5

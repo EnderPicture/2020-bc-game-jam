@@ -14,8 +14,10 @@ public class InfluencerBubbleController : MonoBehaviour
 
     public void influence()
     {
-        foreach (EnemyController enemy in stuffInBubble) {
-            if(enemy.getMode() == 0) {
+        foreach (EnemyController enemy in stuffInBubble)
+        {
+            if (enemy.getMode() == 0)
+            {
                 enemy.convertToFollowers();
             }
         }
