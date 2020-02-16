@@ -71,7 +71,7 @@ public class EnemyController : MonoBehaviour
             if (Input.GetMouseButton(0) && time > lastShot + coolDown)
             {
                 lastShot = time;
-                Quaternion bulletSpread = Quaternion.Euler(new Vector3(0, 0, angle + Random.Range(-followerShootSpread,followerShootSpread)));
+                Quaternion bulletSpread = Quaternion.Euler(new Vector3(0, 0, angle + Random.Range(-followerShootSpread, followerShootSpread)));
                 GameObject newBullet = GameObject.Instantiate(bullet, transform.position, bulletSpread);
             }
 
@@ -104,45 +104,92 @@ public class EnemyController : MonoBehaviour
 
         float angle = Vector3.SignedAngle(input, Vector3.up, Vector3.back);
         angle += 180;
-        if (angle < 22.5f || angle > 360 - 22.5f)
+
+        if (mode == FOLLOWER)
         {
-            animator.Play("IdleEnemy4");
-            sprite.flipX = true;
+            if (angle < 22.5f || angle > 360 - 22.5f)
+            {
+                animator.Play("walkEnemyB4");
+                sprite.flipX = true;
+            }
+            if (22.5f < angle && angle < (22.5 + 45))
+            {
+                animator.Play("walkEnemyB3");
+                sprite.flipX = false;
+            }
+            if (22.5f + 45 * 1 < angle && angle < (22.5 + 45) + 45 * 1)
+            {
+                animator.Play("walkEnemyB2");
+                sprite.flipX = true;
+            }
+            if (22.5f + 45 * 2 < angle && angle < (22.5 + 45) + 45 * 2)
+            {
+                animator.Play("walkEnemyB1");
+                sprite.flipX = true;
+            }
+            if (22.5f + 45 * 3 < angle && angle < (22.5 + 45) + 45 * 3)
+            {
+                animator.Play("walkEnemyB0");
+                sprite.flipX = true;
+            }
+            if (22.5f + 45 * 4 < angle && angle < (22.5 + 45) + 45 * 4)
+            {
+                animator.Play("walkEnemyB1");
+                sprite.flipX = false;
+            }
+            if (22.5f + 45 * 5 < angle && angle < (22.5 + 45) + 45 * 5)
+            {
+                animator.Play("walkEnemyB2");
+                sprite.flipX = false;
+            }
+            if (22.5f + 45 * 6 < angle && angle < (22.5 + 45) + 45 * 6)
+            {
+                animator.Play("walkEnemyB3");
+                sprite.flipX = true;
+            }
         }
-        if (22.5f < angle && angle < (22.5 + 45))
+        else
         {
-            animator.Play("IdleEnemy3");
-            sprite.flipX = true;
-        }
-        if (22.5f + 45 * 1 < angle && angle < (22.5 + 45) + 45 * 1)
-        {
-            animator.Play("IdleEnemy2");
-            sprite.flipX = true;
-        }
-        if (22.5f + 45 * 2 < angle && angle < (22.5 + 45) + 45 * 2)
-        {
-            animator.Play("IdleEnemy1");
-            sprite.flipX = true;
-        }
-        if (22.5f + 45 * 3 < angle && angle < (22.5 + 45) + 45 * 3)
-        {
-            animator.Play("IdleEnemy0");
-            sprite.flipX = true;
-        }
-        if (22.5f + 45 * 4 < angle && angle < (22.5 + 45) + 45 * 4)
-        {
-            animator.Play("IdleEnemy1");
-            sprite.flipX = false;
-        }
-        if (22.5f + 45 * 5 < angle && angle < (22.5 + 45) + 45 * 5)
-        {
-            animator.Play("IdleEnemy2");
-            sprite.flipX = false;
-        }
-        if (22.5f + 45 * 6 < angle && angle < (22.5 + 45) + 45 * 6)
-        {
-            animator.Play("IdleEnemy3");
-            sprite.flipX = false;
+            if (angle < 22.5f || angle > 360 - 22.5f)
+            {
+                animator.Play("walkEnemyR4");
+                sprite.flipX = true;
+            }
+            if (22.5f < angle && angle < (22.5 + 45))
+            {
+                animator.Play("walkEnemyR3");
+                sprite.flipX = false;
+            }
+            if (22.5f + 45 * 1 < angle && angle < (22.5 + 45) + 45 * 1)
+            {
+                animator.Play("walkEnemyR2");
+                sprite.flipX = true;
+            }
+            if (22.5f + 45 * 2 < angle && angle < (22.5 + 45) + 45 * 2)
+            {
+                animator.Play("walkEnemyR1");
+                sprite.flipX = true;
+            }
+            if (22.5f + 45 * 3 < angle && angle < (22.5 + 45) + 45 * 3)
+            {
+                animator.Play("walkEnemyR0");
+                sprite.flipX = true;
+            }
+            if (22.5f + 45 * 4 < angle && angle < (22.5 + 45) + 45 * 4)
+            {
+                animator.Play("walkEnemyR1");
+                sprite.flipX = false;
+            }
+            if (22.5f + 45 * 5 < angle && angle < (22.5 + 45) + 45 * 5)
+            {
+                animator.Play("walkEnemyR2");
+                sprite.flipX = false;
+            }
+            if (22.5f + 45 * 6 < angle && angle < (22.5 + 45) + 45 * 6)
+            {
+                animator.Play("walkEnemyR3");
+                sprite.flipX = true;
+            }
         }
 
         Vector2 targetVelocity = input * maxMove;
@@ -170,8 +217,8 @@ public class EnemyController : MonoBehaviour
         rb.velocity = velocity;
     }
 
-    void generateBossBoost() {
-        
+    void generateBossBoost()
+    {
         nextBoost = Random.Range(boostTimingRange.x, boostTimingRange.y);
     }
 
@@ -180,7 +227,7 @@ public class EnemyController : MonoBehaviour
         mode = FOLLOWER;
         health = followerHealth;
         gameObject.layer = LayerMask.NameToLayer("Followers");
-        sprite.color = new Color(1, 0, 0);
+        // sprite.color = new Color(1, 0, 0);
     }
 
     public void hit()
