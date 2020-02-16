@@ -25,4 +25,30 @@ public class AudioManager : MonoBehaviour
     public void playShootShotgun() {
         audioSource.PlayOneShot(audioClips[1]);
     }
+
+    public void playGameMusic() {
+        audioSource.PlayOneShot(audioClips[17]);
+    }
+
+    public void playZombie() {
+        int audioClipNumber = Random.Range(4, 5);
+        audioSource.PlayOneShot(audioClips[audioClipNumber]);
+    }
+
+    public void playMainMenu() {
+        audioSource.PlayOneShot(audioClips[8]);
+    }
+
+    public void playButton() {
+        int audioClipNumber = Random.Range(13, 16);
+        audioSource.PlayOneShot(audioClips[audioClipNumber]);
+    }
+
+    public void pauseMusic() {
+        audioSource.Pause();
+    }
+
+    public void playMusic() {
+        audioSource.Play();
+    }
 }

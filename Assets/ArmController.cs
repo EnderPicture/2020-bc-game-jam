@@ -91,12 +91,12 @@ public class ArmController : MonoBehaviour
     void Update()
     {
         float time = Time.realtimeSinceStartup;
-        if (Input.GetMouseButton(0) && time > lastShot + coolDown)
+        if (Input.GetMouseButton(0) && time > lastShot + coolDown && PauseMenu.GameIsPaused != true)
         {
             lastShot = time;
             shotgun();
         }
-        else if (Input.GetMouseButton(1) && time > lastShot + coolDown)
+        else if (Input.GetMouseButton(1) && time > lastShot + coolDown && PauseMenu.GameIsPaused != true)
         {
             lastShot = time;
             pistol();
