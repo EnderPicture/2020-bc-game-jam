@@ -80,6 +80,7 @@ public class PlayerController : MonoBehaviour
 
     public void hit()
     {
+        Debug.Log("player Hit!");
         health -= 1;
     }
     void FixedUpdate()
