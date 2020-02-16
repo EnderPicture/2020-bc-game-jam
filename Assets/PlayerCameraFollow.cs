@@ -25,7 +25,11 @@ public class PlayerCameraFollow : MonoBehaviour
         if (playerObject)
         {
             float distance = Vector3.Distance(playerObject.transform.position, transform.position);
-            if (distance > cameraRadius)
+            if (distance > cameraRadius * 1.2)
+            {
+                transform.position = Vector3.MoveTowards(transform.position, playerObject.transform.position, step * 2);
+            }
+            else if (distance > cameraRadius)
             {
                 transform.position = Vector3.MoveTowards(transform.position, playerObject.transform.position, step);
             }
