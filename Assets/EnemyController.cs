@@ -34,11 +34,17 @@ public class EnemyController : MonoBehaviour
 
     public static int ENEMY = 0;
     public static int FOLLOWER = 1;
-    int mode = ENEMY;
+    public static int BOSS = 2;
+    public int mode = ENEMY;
 
     public GameObject bullet;
     public float coolDown;
     float lastShot;
+
+    public float boostValue;
+    public Vector2 boostTimingRange;
+    float nextBoost;
+    float lastDash;
 
     void Start()
     {
@@ -48,6 +54,7 @@ public class EnemyController : MonoBehaviour
 
         maxMove = maxMove > 0 ? maxMove : 1;
         accMove = accMove > 0 ? accMove : 1;
+        generateBossBoost();
     }
 
     void Update()
@@ -149,7 +156,20 @@ public class EnemyController : MonoBehaviour
             rb.AddForce(deltaVelocity.x, deltaVelocity.y, 0);
         }
 
+        if (mode == BOSS && Time.realtimeSinceStartup > lastDash + nextBoost)
+        {
+            lastDash = Time.realtimeSinceStartup;
+            generateBossBoost();
+            Debug.Log("boost");
+            rb.AddForce(input.x * boostValue, input.y * boostValue, 0, ForceMode.Impulse);
+        }
+
         rb.velocity = velocity;
+    }
+
+    void generateBossBoost() {
+        
+        nextBoost = Random.Range(boostTimingRange.x, boostTimingRange.y);
     }
 
     public void convertToFollowers()
