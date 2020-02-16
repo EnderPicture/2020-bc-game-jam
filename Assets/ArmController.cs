@@ -32,11 +32,12 @@ public class ArmController : MonoBehaviour
         cameraController = GameObject.Find("PlayerCamera").GetComponent<CameraController>();
     }
 
-    void pistol() {
+    void pistol()
+    {
         coolDown = pistolCooldown;
         var randomAngle = Random.Range(-pistolSpread, pistolSpread);
         Vector3 convertedAngle = transform.rotation.eulerAngles;
-        Vector3 bulletSpread = new Vector3(convertedAngle.x, convertedAngle.y, convertedAngle.z  + randomAngle);
+        Vector3 bulletSpread = new Vector3(convertedAngle.x, convertedAngle.y, convertedAngle.z + randomAngle);
         GameObject newBullet = GameObject.Instantiate(bullet, spawnPoint.position, Quaternion.Euler(bulletSpread), bulletsContainer);
 
         BulletController bulletController = newBullet.GetComponent<BulletController>();
@@ -50,7 +51,8 @@ public class ArmController : MonoBehaviour
         cameraController.pistolShake();
     }
 
-    void shotgun() {
+    void shotgun()
+    {
         shotGunBullet();
         shotGunBullet();
         shotGunBullet();
@@ -60,10 +62,11 @@ public class ArmController : MonoBehaviour
         cameraController.shotgunShake();
     }
 
-    void shotGunBullet() {
+    void shotGunBullet()
+    {
         var randomAngle = Random.Range(-shotgunSpread, shotgunSpread);
         Vector3 convertedAngle = transform.rotation.eulerAngles;
-        Vector3 bulletSpread = new Vector3(convertedAngle.x, convertedAngle.y, convertedAngle.z  + randomAngle);
+        Vector3 bulletSpread = new Vector3(convertedAngle.x, convertedAngle.y, convertedAngle.z + randomAngle);
         GameObject newBullet = GameObject.Instantiate(bullet, spawnPoint.position, Quaternion.Euler(bulletSpread), bulletsContainer);
 
         BulletController bulletController = newBullet.GetComponent<BulletController>();
@@ -89,7 +92,8 @@ public class ArmController : MonoBehaviour
             lastShot = time;
             shotgun();
         }
-        else if (Input.GetMouseButton(1) && time > lastShot + coolDown) {
+        else if (Input.GetMouseButton(1) && time > lastShot + coolDown)
+        {
             lastShot = time;
             pistol();
         }
@@ -98,13 +102,14 @@ public class ArmController : MonoBehaviour
         float angle = player.getAngle();
 
         Debug.Log(angle);
-        if (angle < 22.5f || angle > 360 - 22.5f) {
+        if (angle < 10.5f || angle > 360 - 10.5f)
+        {
             // down
             animator.Play("Armswing4");
             spriteRenderer.flipX = false;
             spriteRenderer.flipY = true;
         }
-        if ( 22.5f < angle && angle < (22.5+45))
+        if (10.5f < angle && angle < (22.5 + 10.5f + 45))
         {
             // down right
             animator.Play("Armswing3");
@@ -112,42 +117,42 @@ public class ArmController : MonoBehaviour
             spriteRenderer.flipY = true;
 
         }
-        if ( 22.5f + 45 * 1 < angle && angle < (22.5+45) + 45 * 1)
+        if (22.5f + 10.5f + 45 * 1 < angle && angle < (22.5 + 10.5f + 45) + 45 * 1)
         {
             // right
             animator.Play("Armswing2");
             spriteRenderer.flipX = true;
             spriteRenderer.flipY = false;
         }
-        if ( 22.5f + 45 * 2 < angle && angle < (22.5+45) + 45 * 2)
-        {
+        if (22.5f + 10.5f + 45 * 2 < angle && angle < (22.5 + 15.5f + 45) + 45 * 2)
+        { 
             // up right
             animator.Play("Armswing1");
             spriteRenderer.flipX = false;
             spriteRenderer.flipY = true;
         }
-        if ( 22.5f + 45 * 3 < angle && angle < (22.5+45) + 45 * 3)
+        if (22.5f + 15.5f + 45 * 3 < angle && angle < (22.5 - 15.5f + 45) + 45 * 3)
         {
             // up
             animator.Play("Armswing0");
             spriteRenderer.flipX = true;
             spriteRenderer.flipY = false;
         }
-        if ( 22.5f + 45 * 4 < angle && angle < (22.5+45) + 45 * 4)
+        if (22.5f - 15.5f + 45 * 4 < angle && angle < (22.5 - 10.5f + 45) + 45 * 4)
         {
             // up left
             animator.Play("Armswing1");
             spriteRenderer.flipX = true;
             spriteRenderer.flipY = true;
         }
-        if ( 22.5f + 45 * 5 < angle && angle < (22.5+45) + 45 * 5)
+        if (22.5f - 10.5f + 45 * 5 < angle && angle < (22.5 - 10.5f + 45) + 45 * 5)
         {
             // left
             animator.Play("Armswing2");
             spriteRenderer.flipX = false;
             spriteRenderer.flipY = false;
         }
-        if ( 22.5f + 45 * 6 < angle && angle < (22.5+45) + 45 * 6)
+        if (22.5f - 10.5f + 45 * 6 < angle && angle < (22.5 + 45 + 10.5f) + 45 * 6)
         {
             // down left
             animator.Play("Armswing3");
