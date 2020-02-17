@@ -80,6 +80,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   speed: 10
   health: 1
+  spriteRenderer: {fileID: 3251730084086101016}
   mode: 0
 --- !u!54 &5653734091636336895
 Rigidbody:

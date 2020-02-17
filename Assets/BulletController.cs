@@ -12,6 +12,8 @@ public class BulletController : MonoBehaviour
 
     float speedMod = 0;
 
+    public SpriteRenderer spriteRenderer;
+
     //0 for pistol, 1 for shotgun
     public int mode = 0;
 
@@ -24,6 +26,9 @@ public class BulletController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        spriteRenderer.GetComponent<SpriteRenderer>().sortingOrder = -(int)(transform.position.y * 100);
+        
         if (mode == 0) {
             speedMod = 1;
             if (spawnTime + health < Time.realtimeSinceStartup)

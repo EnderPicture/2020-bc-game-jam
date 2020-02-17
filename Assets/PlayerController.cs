@@ -34,6 +34,8 @@ public class PlayerController : MonoBehaviour
         angle += 180;
         savedAngle = angle;
 
+        spriteRenderer.GetComponent<SpriteRenderer>().sortingOrder = -(int)(transform.position.y * 100);
+
         if (input.magnitude > 0)
         {
             if (angle < 10.5f || angle > 360 - 10.5f)
