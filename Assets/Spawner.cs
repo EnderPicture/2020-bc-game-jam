@@ -24,22 +24,22 @@ public class Spawner : MonoBehaviour
             for (int i = 0; i < a; i++)
             {
                 int rand = Random.Range(0, enemies.Length);
-                GameObject newEnemy = GameObject.Instantiate(enemies[rand]);
+                GameObject newEnemy = GameObject.Instantiate(enemies[0]);
                 newEnemy.GetComponent<EnemyController>().player = player;
                 newEnemy.transform.position = new Vector3(Random.Range(tl.position.x, br.position.x), Random.Range(br.position.y, tl.position.y), 0);
             }
         }
     }
 
-    public GameObject spawnBoss()
+    public EnemyController spawnBoss()
     {
         int rand = Random.Range(0, enemies.Length);
-        GameObject newEnemy = GameObject.Instantiate(enemies[rand]);
+        GameObject newEnemy = GameObject.Instantiate(enemies[1]);
         newEnemy.GetComponent<EnemyController>().player = player;
         newEnemy.GetComponent<EnemyController>().mode = 2;
         newEnemy.GetComponent<EnemyController>().setHealth(100);
         newEnemy.transform.position = new Vector3(Random.Range(tl.position.x, br.position.x), Random.Range(br.position.y, tl.position.y), 0);
-        return newEnemy;
+        return newEnemy.GetComponent<EnemyController>();
     }
     public void spawnGameObject(GameObject go) {
         GameObject newEnemy = GameObject.Instantiate(go);
