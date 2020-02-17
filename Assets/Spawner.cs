@@ -30,6 +30,17 @@ public class Spawner : MonoBehaviour
             }
         }
     }
+
+    public GameObject spawnBoss()
+    {
+        int rand = Random.Range(0, enemies.Length);
+        GameObject newEnemy = GameObject.Instantiate(enemies[rand]);
+        newEnemy.GetComponent<EnemyController>().player = player;
+        newEnemy.GetComponent<EnemyController>().mode = 2;
+        newEnemy.GetComponent<EnemyController>().setHealth(100);
+        newEnemy.transform.position = new Vector3(Random.Range(tl.position.x, br.position.x), Random.Range(br.position.y, tl.position.y), 0);
+        return newEnemy;
+    }
     public void spawnGameObject(GameObject go) {
         GameObject newEnemy = GameObject.Instantiate(go);
         newEnemy.GetComponent<EnemyController>().player = player;
