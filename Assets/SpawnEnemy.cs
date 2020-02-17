@@ -6,8 +6,7 @@ public class SpawnEnemy : MonoBehaviour {
     
     public Transform player;
     public Spawner[] spawner;
-    public EnemyController boss; 
-   
+    public EnemyController boss;
     float timer = 0;
     int enemy = 0;
     int enemySpawn = 5;
@@ -15,10 +14,6 @@ public class SpawnEnemy : MonoBehaviour {
     int enemyRound = 0;
     
     void Update() {
-        if(enemyRound >= 13 && boss.health < 0)
-        {
-            // gah
-        }
         timer += Time.deltaTime;
 
         if( timer >= 1.5 ) {
@@ -38,7 +33,19 @@ public class SpawnEnemy : MonoBehaviour {
             }
             if (enemyRound == 13)
             {
-                Debug.Log("BOSS APPEAR or win?");
+                notpass = true;
+                while (notpass) {
+                    Spawner indiSpawner = spawner[Random.Range(0, spawner.Length)];
+                    float dis = ((Vector2)player.position - (Vector2)indiSpawner.transform.position).magnitude;
+                    if (dis > 15) {
+                        boss = indiSpawner.spawnBoss();
+                        notpass = false;
+                    }
+                }
+            }
+            if(boss.health < 0)
+            {
+                //you win
             }
             timer = 0;
         }

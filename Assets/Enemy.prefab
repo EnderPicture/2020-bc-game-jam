@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 8742735881771845620}
-  maxMoveEnemy: 6.2
+  maxMoveEnemy: 5.8
   accMoveEnemy: 2.5
   dampMoveEnemy: 10
   maxMoveFollowers: 2.5
@@ -178,6 +178,7 @@ MonoBehaviour:
   sprite: {fileID: 5118987572439623956}
   player: {fileID: 0}
   mode: 0
+  deathTime: 10
   bullet: {fileID: 5653734091636336881, guid: d2da582b37858f34f826271b90a21242, type: 3}
   coolDown: 0.3
   boostValue: 0.5
