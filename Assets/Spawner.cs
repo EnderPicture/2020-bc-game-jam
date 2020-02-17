@@ -34,7 +34,7 @@ public class Spawner : MonoBehaviour
     public EnemyController spawnBoss()
     {
         int rand = Random.Range(0, enemies.Length);
-        GameObject newEnemy = GameObject.Instantiate(enemies[1]);
+        GameObject newEnemy = GameObject.Instantiate(enemies[0]);
         newEnemy.GetComponent<EnemyController>().player = player;
         newEnemy.GetComponent<EnemyController>().mode = 2;
         newEnemy.GetComponent<EnemyController>().setHealth(100);

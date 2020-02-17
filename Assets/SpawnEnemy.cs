@@ -44,7 +44,7 @@ public class SpawnEnemy : MonoBehaviour {
                     }
                 }
             }
-            if(enemyRound >= 13 && boss.health < 0)
+            if (enemyRound >= 13 && boss != null && boss.health < 0) 
             {
                 SceneManager.LoadScene("WinScene");
             }
