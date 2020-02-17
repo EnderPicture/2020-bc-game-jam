@@ -13,8 +13,12 @@ public class SpawnEnemy : MonoBehaviour {
     int enemySpawn = 5;
     int incrementEveryRounds = 4;
     int enemyRound = 0;
+    
     void Update() {
-
+        if(enemyRound >= 13 && boss.health < 0)
+        {
+            // gah
+        }
         timer += Time.deltaTime;
 
         if( timer >= 1.5 ) {
@@ -34,11 +38,11 @@ public class SpawnEnemy : MonoBehaviour {
             }
             if (enemyRound == 13)
             {
-                Debug.Log("BOSS APPEAR");
+                Debug.Log("BOSS APPEAR or win?");
             }
             timer = 0;
         }
-     
+   
     } // update
 
 } // SpawnEnemy Class 
