@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SpawnEnemy : MonoBehaviour {
     
@@ -12,7 +13,7 @@ public class SpawnEnemy : MonoBehaviour {
     int enemySpawn = 5;
     int incrementEveryRounds = 4;
     int enemyRound = 0;
-    
+
     void Update() {
         timer += Time.deltaTime;
 
@@ -45,7 +46,7 @@ public class SpawnEnemy : MonoBehaviour {
             }
             if(enemyRound >= 13 && boss.health < 0)
             {
-                //you win
+                SceneManager.LoadScene("WinScene");
             }
             timer = 0;
         }
