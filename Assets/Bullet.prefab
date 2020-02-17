@@ -80,6 +80,7 @@ MonoBehaviour:
   rb: {fileID: 0}
   speed: 10
   health: 1
+  mode: 0
 --- !u!54 &5653734091636336895
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -134,8 +135,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7586439211565632499}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6.3412, y: 6.3412, z: 6.3412}
+  m_LocalPosition: {x: 0.088, y: -0.081, z: 0}
+  m_LocalScale: {x: 0.47448683, y: 0.47448683, z: 0.47448683}
   m_Children: []
   m_Father: {fileID: 9010698108507800749}
   m_RootOrder: 0
@@ -179,7 +180,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: ca53c50c5d9330246a9c28df039a5ed2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
