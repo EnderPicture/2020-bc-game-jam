@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class heathBar : MonoBehaviour
 {
@@ -18,6 +19,9 @@ public class heathBar : MonoBehaviour
                 hp--;
             }
             // Debug.Log("health bar should die");
+        }
+        if(player.health == 0) {
+            SceneManager.LoadScene("Death Scene");
         }
     }
 }

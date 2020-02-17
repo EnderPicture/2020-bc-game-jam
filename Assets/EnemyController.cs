@@ -63,8 +63,20 @@ public class EnemyController : MonoBehaviour
         generateBossBoost();
     }
 
+    public void setHealth(float health)
+    {
+        this.health = health;
+    }
+
     void Update()
     {
+        if (mode == BOSS)
+        {
+            sprite.color = new Color(1f, 0, 0);
+            transform.localScale = new Vector3(2f, 2f, 2f);
+        }
+
+
         if (isDead == false && mode == FOLLOWER)
         {
             Vector2 mousePosition = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
@@ -250,7 +262,7 @@ public class EnemyController : MonoBehaviour
                 gameObject.layer = LayerMask.NameToLayer("deadObj");
                 GameObject.Destroy(this.gameObject, deathTime);
                 isDead = true;
-                animator.Play("dead"+Random.Range(0, 3));
+                animator.Play("dead"+Random.Range(0, 4));
                 //change to dead animation
             }
             else
