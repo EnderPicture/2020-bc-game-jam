@@ -262,6 +262,7 @@ public class EnemyController : MonoBehaviour
                 gameObject.layer = LayerMask.NameToLayer("deadObj");
                 GameObject.Destroy(this.gameObject, deathTime);
                 isDead = true;
+                animator.Play("dead"+Random.Range(0, 4));
                 //change to dead animation
             }
             else
