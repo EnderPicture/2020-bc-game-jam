@@ -43,7 +43,7 @@ public class SpawnEnemy : MonoBehaviour {
                     }
                 }
             }
-            if(boss.health < 0)
+            if(enemyRound >= 13 && boss.health < 0)
             {
                 //you win
             }
