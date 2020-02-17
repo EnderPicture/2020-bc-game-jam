@@ -48,6 +48,6 @@ public class PauseMenu : MonoBehaviour
     {
         GameIsPaused = false;
         Time.timeScale = 1;
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("alvinbalance");
     }
 }
