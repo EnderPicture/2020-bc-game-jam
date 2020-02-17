@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -575,7 +575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efdf7f5e19da5d342b5fe51a1c0343ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GAME_SCENE: Main
+  GAME_SCENE: alvinbalance
   audioManager: {fileID: 0}
 --- !u!1 &988035718
 GameObject:
@@ -1129,7 +1129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efdf7f5e19da5d342b5fe51a1c0343ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GAME_SCENE: Menu
+  GAME_SCENE: alvinbalance
   audioManager: {fileID: 0}
 --- !u!1001 &1896950006
 PrefabInstance:
