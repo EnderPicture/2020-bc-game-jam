@@ -79,8 +79,8 @@ public class EnemyController : MonoBehaviour
         
         sprite.GetComponent<SpriteRenderer>().sortingOrder = -(int)(transform.position.y * 100);
 
-        if (isDead == false && mode == FOLLOWER)
-        {
+        if (isDead == false && mode == FOLLOWER && PauseMenu.GameIsPaused == false)
+        {   
             Vector2 mousePosition = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
             float angle = Vector3.SignedAngle(mousePosition, Vector3.up, Vector3.back);
 

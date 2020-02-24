@@ -25,7 +25,6 @@ public class ArmController : MonoBehaviour
 
     public Animator animator;
     public SpriteRenderer spriteRenderer;
-
     public CameraController cameraController;
     public AudioManager audioManager;
 
@@ -86,22 +85,8 @@ public class ArmController : MonoBehaviour
         rb.AddForce(force, ForceMode.Impulse);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        float time = Time.realtimeSinceStartup;
-        if (Input.GetMouseButton(0) && time > lastShot + coolDown && PauseMenu.GameIsPaused != true)
-        {
-            lastShot = time;
-            shotgun();
-        }
-        else if (Input.GetMouseButton(1) && time > lastShot + coolDown && PauseMenu.GameIsPaused != true)
-        {
-            lastShot = time;
-            pistol();
-        }
 
-
+    void moveArm(){
         float angle = player.getAngle();
 
         if (angle < 10.5f || angle > 360 - 10.5f)
@@ -161,5 +146,24 @@ public class ArmController : MonoBehaviour
             spriteRenderer.flipX = true;
             spriteRenderer.flipY = true;
         }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if(!PauseMenu.GameIsPaused) {
+            float time = Time.realtimeSinceStartup;
+            if (Input.GetMouseButton(0) && time > lastShot + coolDown)
+            {
+                lastShot = time;
+                shotgun();
+            }
+            else if (Input.GetMouseButton(1) && time > lastShot + coolDown)
+            {
+                lastShot = time;
+                pistol();
+            }
+            moveArm();
+        } 
     }
 }

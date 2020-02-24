@@ -12,12 +12,14 @@ public class PauseMenu : MonoBehaviour
 
     void Start () {
         pauseMenuUi.SetActive(false);
+        GameIsPaused = false;
+        Time.timeScale = 1;
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
         audioManager.playGameMusic();
     }
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.P)) {
+        if(Input.GetKeyDown(KeyCode.Escape)) {
             if (GameIsPaused) {
                 Resume();
             }

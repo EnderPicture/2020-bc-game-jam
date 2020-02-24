@@ -24,4 +24,10 @@ public class MenuOptions : MonoBehaviour
         audioManager.playButton();
         SceneManager.LoadScene(GAME_SCENE);
     }
+
+    public void ReturnToMainMene() 
+    {
+        audioManager.playButton();
+        SceneManager.LoadScene("Main Menu");
+    }
 }

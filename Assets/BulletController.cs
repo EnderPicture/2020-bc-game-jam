@@ -51,8 +51,10 @@ public class BulletController : MonoBehaviour
     }
     void FixedUpdate()
     {
-        Vector3 position = transform.localPosition;
-        position += transform.up * speed * Time.deltaTime * Mathf.Min((speedMod + .3f), 1);
-        transform.localPosition = position;
+        if(PauseMenu.GameIsPaused == false) {
+            Vector3 position = transform.localPosition;
+            position += transform.up * speed * Time.deltaTime * Mathf.Min((speedMod + .3f), 1);
+            transform.localPosition = position;
+        }
     }
 }

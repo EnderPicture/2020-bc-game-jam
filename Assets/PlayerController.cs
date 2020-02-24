@@ -28,14 +28,24 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        Vector2 mousePosition = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
-        float angle = Vector3.SignedAngle(mousePosition, Vector3.up, Vector3.back);
-        arm.eulerAngles = new Vector3(0, 0, angle);
-        angle += 180;
-        savedAngle = angle;
+        if(!PauseMenu.GameIsPaused) {
+            Vector2 mousePosition = Input.mousePosition - Camera.main.WorldToScreenPoint(transform.position);
+            float angle = Vector3.SignedAngle(mousePosition, Vector3.up, Vector3.back);
+            arm.eulerAngles = new Vector3(0, 0, angle);
+            angle += 180;
+            savedAngle = angle;
 
-        spriteRenderer.GetComponent<SpriteRenderer>().sortingOrder = -(int)(transform.position.y * 100);
+            spriteRenderer.GetComponent<SpriteRenderer>().sortingOrder = -(int)(transform.position.y * 100);
+                move(angle);
 
+            if (Input.GetKeyDown("space") && PauseMenu.GameIsPaused == false)
+            {
+                influencer.influence();
+            }
+        }
+    }
+
+    public void move(float angle) {
         if (input.magnitude > 0)
         {
             if (angle < 10.5f || angle > 360 - 10.5f)
@@ -137,17 +147,8 @@ public class PlayerController : MonoBehaviour
                 animator.Play("Idle3");
                 spriteRenderer.flipX = true;
             }
-
-        }
-
-
-
-        if (Input.GetKeyDown("space"))
-        {
-            influencer.influence();
         }
     }
-
     public void hit()
     {
         Debug.Log("player Hit!");
