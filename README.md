@@ -2,6 +2,8 @@
 
 This is Zombie Shooting Game
 
+Video: https://www.youtube.com/watch?v=JCVjP79-ehg&feature=youtu.be
+
 ## Built With
 
 * [Unity](https://unity.com/) - The mobile building application
