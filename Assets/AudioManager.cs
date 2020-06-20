@@ -19,13 +19,11 @@ public class AudioManager : MonoBehaviour
     }
 
     public void playShootPistol() {
-        audioSource.volume = .3f;
-        audioSource.PlayOneShot(audioClips[0]);
-        audioSource.volume = 1;
+        audioSource.PlayOneShot(audioClips[0], .7f);
     }
 
     public void playShootShotgun() {
-        audioSource.PlayOneShot(audioClips[1]);
+        audioSource.PlayOneShot(audioClips[1], .5f);
     }
 
     public void playGameMusic() {
@@ -47,10 +45,10 @@ public class AudioManager : MonoBehaviour
     }
 
     public void pauseMusic() {
-        audioSource.Pause();
+        audioSource.volume = .2f;
     }
 
     public void playMusic() {
-        audioSource.Play();
+        audioSource.volume = 1;
     }
 }

@@ -4,14 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
-    public static bool GameIsPaused = false;
+    public static bool GameIsPaused;
     public AudioManager audioManager;
 
     public GameObject pauseMenuUi;
     // Update is called once per frame
 
     void Start () {
-        pauseMenuUi.SetActive(false);
+        pauseMenuUi.SetActive(true);
         GameIsPaused = false;
         Time.timeScale = 1;
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
@@ -19,14 +19,20 @@ public class PauseMenu : MonoBehaviour
     }
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape)) {
+        if(!GameIsPaused && pauseMenuUi.activeSelf)
+        {
+            pauseMenuUi.SetActive(false);
+        }
+        if (Input.GetKeyDown(KeyCode.Escape)) {
             if (GameIsPaused) {
                 Resume();
             }
             else {
+                GameIsPaused = true;
                 Pause();
+                GameIsPaused = true;
             }
-        } 
+        }
     }
 
     public void Resume() 
@@ -39,9 +45,9 @@ public class PauseMenu : MonoBehaviour
     }
 
     void Pause() {
+        GameIsPaused = true;
         pauseMenuUi.SetActive(true);
         Time.timeScale = 0;
-        GameIsPaused = true;
         audioManager.playButton();
         audioManager.pauseMusic();
     }
@@ -49,7 +55,10 @@ public class PauseMenu : MonoBehaviour
     public void LoadScene()
     {
         GameIsPaused = false;
+        pauseMenuUi.SetActive(false);
         Time.timeScale = 1;
         SceneManager.LoadScene("alvinbalance");
+        GameIsPaused = false;
+        pauseMenuUi.SetActive(false);
     }
 }
