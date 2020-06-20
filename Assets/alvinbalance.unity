@@ -265,7 +265,7 @@ GameObject:
   m_Component:
   - component: {fileID: 442363973}
   - component: {fileID: 442363974}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: garbage_S
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -393,7 +393,7 @@ GameObject:
   m_Component:
   - component: {fileID: 466055457}
   - component: {fileID: 466055458}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: rightwall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -437,7 +437,7 @@ GameObject:
   m_Component:
   - component: {fileID: 508267181}
   - component: {fileID: 508267182}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -482,7 +482,7 @@ GameObject:
   m_Component:
   - component: {fileID: 523972350}
   - component: {fileID: 523972351}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: mapbottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -681,7 +681,7 @@ GameObject:
   m_Component:
   - component: {fileID: 767414062}
   - component: {fileID: 767414063}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: desk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -724,7 +724,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 784884158}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: untouchables
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1022,7 +1022,7 @@ GameObject:
   m_Component:
   - component: {fileID: 873291502}
   - component: {fileID: 873291503}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: cat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1066,7 +1066,7 @@ GameObject:
   m_Component:
   - component: {fileID: 914696648}
   - component: {fileID: 914696649}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: powerbar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1110,7 +1110,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1142737407}
   - component: {fileID: 1142737408}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: futon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1155,7 +1155,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1244187735}
   - component: {fileID: 1244187736}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: deadguy_bodytable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1206,7 +1206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1321510659}
   - component: {fileID: 1321510660}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: leftwall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1319,7 +1319,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1628114943}
   - component: {fileID: 1628114944}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: upperarea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1363,7 +1363,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1805313011}
   - component: {fileID: 1805313012}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: garbage_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1407,7 +1407,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1938173063}
   - component: {fileID: 1938173064}
-  m_Layer: 12
+  m_Layer: 13
   m_Name: mapmiddle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

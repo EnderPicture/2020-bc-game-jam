@@ -41,10 +41,19 @@ public class ArmController : MonoBehaviour
         Vector3 convertedAngle = transform.rotation.eulerAngles;
         Vector3 bulletSpread = new Vector3(convertedAngle.x, convertedAngle.y, convertedAngle.z + randomAngle);
         Vector3 offset = new Vector3(-1.4f, 0);
-        if (player.getAngle() < 160)
+        if (player.getAngle() < 169.5)
         {
             offset = new Vector3(-1.4f, -.5f);
+        } 
+        else if (player.getAngle() < 180)
+        {
+            offset = new Vector3(-1.4f, -.2f);
         }
+        else if (player.getAngle() < 237.5)
+        {
+            offset = new Vector3(-1.4f, -.3f);
+        }
+
         offset = Quaternion.Euler(0, 0, transform.eulerAngles.z - 90) * offset;
         GameObject newBullet = GameObject.Instantiate(bullet, spawnPoint.position + offset, Quaternion.Euler(bulletSpread), bulletsContainer);
 
@@ -160,7 +169,7 @@ public class ArmController : MonoBehaviour
     void Update()
     {
         if(!PauseMenu.GameIsPaused) {
-            float time = Time.realtimeSinceStartup;
+            float time = Time.time;
             if (Input.GetMouseButton(0) && time > lastShot + coolDown)
             {
                 lastShot = time;

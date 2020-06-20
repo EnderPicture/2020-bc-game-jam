@@ -20,7 +20,7 @@ public class BulletController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        spawnTime = Time.realtimeSinceStartup;
+        spawnTime = Time.time;
     }
 
     // Update is called once per frame
@@ -31,15 +31,15 @@ public class BulletController : MonoBehaviour
         
         if (mode == 0) {
             speedMod = 1;
-            if (spawnTime + health < Time.realtimeSinceStartup)
+            if (spawnTime + health < Time.time)
             {
                 die();
             }
         }
         else if (mode == 1)
         {
-            speedMod = ((spawnTime + health) - Time.realtimeSinceStartup) / health;
-            if (spawnTime + health < Time.realtimeSinceStartup)
+            speedMod = ((spawnTime + health) - Time.time) / health;
+            if (spawnTime + health < Time.time)
             {
                 die();
             }
@@ -48,6 +48,14 @@ public class BulletController : MonoBehaviour
     public void die()
     {
         GameObject.Destroy(this.gameObject);
+    }
+    public void OnCollisionEnter(Collision other)
+    {
+        print(other.gameObject.layer);
+        if (other.gameObject.layer == LayerMask.NameToLayer("Wall"))
+        {
+            GameObject.Destroy(this.gameObject);
+        }
     }
     void FixedUpdate()
     {
