@@ -19,7 +19,9 @@ public class AudioManager : MonoBehaviour
     }
 
     public void playShootPistol() {
+        audioSource.volume = .3f;
         audioSource.PlayOneShot(audioClips[0]);
+        audioSource.volume = 1;
     }
 
     public void playShootShotgun() {

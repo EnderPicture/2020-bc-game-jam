@@ -203,6 +203,16 @@ PrefabInstance:
       propertyPath: amount
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 3912911941770852212, guid: 6c78edb35f22f0646a97765a5435700f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 3912911941770852212, guid: 6c78edb35f22f0646a97765a5435700f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -11
+      objectReference: {fileID: 0}
     - target: {fileID: 7436308961893103665, guid: 6c78edb35f22f0646a97765a5435700f,
         type: 3}
       propertyPath: player
@@ -1552,12 +1562,12 @@ PrefabInstance:
     - target: {fileID: 5883219418215427008, guid: 0ae3bb9f975579847bc21de51576501a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.06
+      value: 0.95
       objectReference: {fileID: 0}
     - target: {fileID: 5883219418215427008, guid: 0ae3bb9f975579847bc21de51576501a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.86
+      value: -5.2
       objectReference: {fileID: 0}
     - target: {fileID: 5883219418215427008, guid: 0ae3bb9f975579847bc21de51576501a,
         type: 3}
@@ -1622,27 +1632,42 @@ PrefabInstance:
     - target: {fileID: 5883219418390284247, guid: 0ae3bb9f975579847bc21de51576501a,
         type: 3}
       propertyPath: pistolSpeed
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5883219418390284247, guid: 0ae3bb9f975579847bc21de51576501a,
         type: 3}
       propertyPath: shotgunStartUpSpeedMax
-      value: 3.5
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 5883219418390284247, guid: 0ae3bb9f975579847bc21de51576501a,
         type: 3}
       propertyPath: shotgunStartUpSpeedMin
-      value: 2.2
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 5883219418390284247, guid: 0ae3bb9f975579847bc21de51576501a,
         type: 3}
       propertyPath: shotgunBulletDuration
-      value: 0.44
+      value: 0.24
       objectReference: {fileID: 0}
     - target: {fileID: 5883219418390284247, guid: 0ae3bb9f975579847bc21de51576501a,
         type: 3}
       propertyPath: shotgunBullets
-      value: 8
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5883219418390284247, guid: 0ae3bb9f975579847bc21de51576501a,
+        type: 3}
+      propertyPath: pistolCooldown
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5883219418390284247, guid: 0ae3bb9f975579847bc21de51576501a,
+        type: 3}
+      propertyPath: shotgunKnockBack
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5883219418390284247, guid: 0ae3bb9f975579847bc21de51576501a,
+        type: 3}
+      propertyPath: pistolSpread
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ae3bb9f975579847bc21de51576501a, type: 3}

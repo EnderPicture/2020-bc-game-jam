@@ -236,7 +236,7 @@ public class EnemyController : MonoBehaviour
         }
         else
         {
-            rb.drag = 5;
+            rb.drag = 15;
         }
     }
 
@@ -288,7 +288,15 @@ public class EnemyController : MonoBehaviour
         if (other.gameObject.layer == LayerMask.NameToLayer("Bullet"))
         {
             Vector2 rotated = Helper.AngleVector(other.transform.eulerAngles.z * Mathf.Deg2Rad);
-            rb.AddForce(rotated, ForceMode.Impulse);
+            rotated = Quaternion.Euler(0, 0, Random.Range(80, 100)) * rotated;
+            if (health == 1)
+            {
+                rb.AddForce(rotated * 5f, ForceMode.Impulse);
+            }
+            else
+            {
+                rb.AddForce(rotated, ForceMode.Impulse);
+            }
             other.gameObject.GetComponent<BulletController>().die();
             hit();
         }

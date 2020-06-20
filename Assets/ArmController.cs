@@ -40,7 +40,13 @@ public class ArmController : MonoBehaviour
         var randomAngle = Random.Range(-pistolSpread, pistolSpread);
         Vector3 convertedAngle = transform.rotation.eulerAngles;
         Vector3 bulletSpread = new Vector3(convertedAngle.x, convertedAngle.y, convertedAngle.z + randomAngle);
-        GameObject newBullet = GameObject.Instantiate(bullet, spawnPoint.position, Quaternion.Euler(bulletSpread), bulletsContainer);
+        Vector3 offset = new Vector3(-1.4f, 0);
+        if (player.getAngle() < 160)
+        {
+            offset = new Vector3(-1.4f, -.5f);
+        }
+        offset = Quaternion.Euler(0, 0, transform.eulerAngles.z - 90) * offset;
+        GameObject newBullet = GameObject.Instantiate(bullet, spawnPoint.position + offset, Quaternion.Euler(bulletSpread), bulletsContainer);
 
         BulletController bulletController = newBullet.GetComponent<BulletController>();
         bulletController.GetComponent<BulletController>().speed =
@@ -69,7 +75,9 @@ public class ArmController : MonoBehaviour
         var randomAngle = Random.Range(-shotgunSpread, shotgunSpread);
         Vector3 convertedAngle = transform.rotation.eulerAngles;
         Vector3 bulletSpread = new Vector3(convertedAngle.x, convertedAngle.y, convertedAngle.z + randomAngle);
-        GameObject newBullet = GameObject.Instantiate(bullet, spawnPoint.position, Quaternion.Euler(bulletSpread), bulletsContainer);
+        Vector3 offset = new Vector3(-.6f, 0);
+        offset = Quaternion.Euler(0, 0, transform.eulerAngles.z - 90) * offset;
+        GameObject newBullet = GameObject.Instantiate(bullet, spawnPoint.position + offset, Quaternion.Euler(bulletSpread), bulletsContainer);
 
         BulletController bulletController = newBullet.GetComponent<BulletController>();
 
