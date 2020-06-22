@@ -162,6 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 8742735881771845620}
+  se: {fileID: 0}
   maxMoveEnemy: 5.8
   accMoveEnemy: 2.5
   dampMoveEnemy: 10
@@ -183,8 +184,8 @@ MonoBehaviour:
   coolDown: 0.3
   boostValue: 0.5
   boostTimingRange: {x: 1, y: 3}
-  followerShootSpread: 0
-  followerHealth: 0
+  followerShootSpread: 5
+  followerHealth: 3
 --- !u!54 &8742735881771845620
 Rigidbody:
   m_ObjectHideFlags: 0

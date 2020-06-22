@@ -51,7 +51,7 @@ public class EnemyController : MonoBehaviour
     float lastDash;
 
     public float followerShootSpread;
-    public float followerHealth;
+    public float followerHealth = 10;
 
     bool isDead = false;
     void Start()
