@@ -9,7 +9,7 @@ public class SpawnEnemy : MonoBehaviour {
     public Spawner[] spawner;
     public EnemyController boss;
     float timer = 0;
-    int enemy = 0;
+    public int enemyAliveCount = 0; // to not crash the game
     int enemySpawn = 5;
     int incrementEveryRounds = 4;
     int enemyRound = 0;
@@ -19,11 +19,12 @@ public class SpawnEnemy : MonoBehaviour {
 
         if( timer >= 1.5 ) {
             bool notpass = true;
-            while (notpass) {
+            while (notpass && enemyAliveCount < 250) {
                 Spawner indiSpawner = spawner[Random.Range(0, spawner.Length)];
                 float dis = ((Vector2)player.position - (Vector2)indiSpawner.transform.position).magnitude;
                 if (dis > 15) {
                     indiSpawner.spawn(enemySpawn);
+                    enemyAliveCount += enemySpawn;
                     notpass = false;
                 }
             }

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class EnemyController : MonoBehaviour
 {
     public Rigidbody rb;
+    public SpawnEnemy se;
     public float maxMoveEnemy;
     public float accMoveEnemy;
     public float dampMoveEnemy;
@@ -259,6 +260,7 @@ public class EnemyController : MonoBehaviour
         health -= 1;
         if (health <= 0)
         {
+            se.enemyAliveCount--; // reduce count of global alive enemies
             if (mode == BOSS)
             {
                 SceneManager.LoadScene("WinScene");
@@ -273,7 +275,7 @@ public class EnemyController : MonoBehaviour
             }
             else
             {
-                GameObject.Destroy(this.gameObject, deathTime);
+                GameObject.Destroy(this.gameObject, 0);
             }
         }
     }

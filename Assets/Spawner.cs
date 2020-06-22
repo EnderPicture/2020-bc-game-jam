@@ -9,6 +9,8 @@ public class Spawner : MonoBehaviour
 
     public Transform player;
 
+    public SpawnEnemy se;
+
     public static int RAND = 0;
     public int mode = RAND;
     public int amount = 10;
@@ -26,6 +28,7 @@ public class Spawner : MonoBehaviour
                 int rand = Random.Range(0, enemies.Length);
                 GameObject newEnemy = GameObject.Instantiate(enemies[0]);
                 newEnemy.GetComponent<EnemyController>().player = player;
+                newEnemy.GetComponent<EnemyController>().se = se;
                 newEnemy.transform.position = new Vector3(Random.Range(tl.position.x, br.position.x), Random.Range(br.position.y, tl.position.y), 0);
             }
         }
@@ -36,6 +39,7 @@ public class Spawner : MonoBehaviour
         int rand = Random.Range(0, enemies.Length);
         GameObject newEnemy = GameObject.Instantiate(enemies[0]);
         newEnemy.GetComponent<EnemyController>().player = player;
+        newEnemy.GetComponent<EnemyController>().se = se;
         newEnemy.GetComponent<EnemyController>().mode = 2;
         newEnemy.GetComponent<EnemyController>().setHealth(100);
         newEnemy.transform.position = new Vector3(Random.Range(tl.position.x, br.position.x), Random.Range(br.position.y, tl.position.y), 0);
