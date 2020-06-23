@@ -20,7 +20,7 @@ public class heathBar : MonoBehaviour
             }
             // Debug.Log("health bar should die");
         }
-        if(player.health == 0) {
+        if(player.health <= 0) {
             SceneManager.LoadScene("Death Scene");
         }
     }
