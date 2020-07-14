@@ -257,6 +257,7 @@ public class EnemyController : MonoBehaviour
     public void hit()
     {
         health -= 1;
+        sprite.GetComponent<SpriteFlash>().Flash();
         if (health <= 0)
         {
             se.enemyAliveCount--; // reduce count of global alive enemies
