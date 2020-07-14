@@ -573,7 +573,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efdf7f5e19da5d342b5fe51a1c0343ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GAME_SCENE: alvinbalance
+  GAME_SCENE: game
   audioManager: {fileID: 0}
 --- !u!1 &799441086
 GameObject:

@@ -229,7 +229,6 @@ public class EnemyController : MonoBehaviour
             {
                 lastDash = Time.realtimeSinceStartup;
                 generateBossBoost();
-                Debug.Log("boost");
                 rb.AddForce(input.x * boostValue, input.y * boostValue, 0, ForceMode.Impulse);
             }
 
@@ -287,13 +286,14 @@ public class EnemyController : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Bullet"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Bullet") && health > 0)
         {
             Vector2 rotated = Helper.AngleVector(other.transform.eulerAngles.z * Mathf.Deg2Rad);
             rotated = Quaternion.Euler(0, 0, Random.Range(80, 100)) * rotated;
             if (health == 1)
             {
                 rb.AddForce(rotated * 5f, ForceMode.Impulse);
+                other.gameObject.GetComponent<BulletController>().die();
             }
             else
             {

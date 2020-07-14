@@ -57,7 +57,7 @@ public class PauseMenu : MonoBehaviour
         GameIsPaused = false;
         pauseMenuUi.SetActive(false);
         Time.timeScale = 1;
-        SceneManager.LoadScene("alvinbalance");
+        SceneManager.LoadScene("game");
         GameIsPaused = false;
         pauseMenuUi.SetActive(false);
     }

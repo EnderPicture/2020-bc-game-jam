@@ -51,7 +51,6 @@ public class BulletController : MonoBehaviour
     }
     public void OnCollisionEnter(Collision other)
     {
-        print(other.gameObject.layer);
         if (other.gameObject.layer == LayerMask.NameToLayer("Wall"))
         {
             GameObject.Destroy(this.gameObject);

@@ -34,7 +34,6 @@ public class PlayerController : MonoBehaviour
             arm.eulerAngles = new Vector3(0, 0, angle);
             angle += 180;
             savedAngle = angle;
-
             spriteRenderer.GetComponent<SpriteRenderer>().sortingOrder = -(int)(transform.position.y * 100);
                 move(angle);
 
@@ -151,7 +150,6 @@ public class PlayerController : MonoBehaviour
     }
     public void hit()
     {
-        Debug.Log("player Hit!");
         health -= 1;
     }
     void FixedUpdate()

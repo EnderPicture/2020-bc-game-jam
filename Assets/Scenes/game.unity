@@ -138,6 +138,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemySpawn
       objectReference: {fileID: 0}
+    - target: {fileID: 3912911940911586593, guid: 6c78edb35f22f0646a97765a5435700f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3912911940911586599, guid: 6c78edb35f22f0646a97765a5435700f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -888,6 +893,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5931813010117224809, guid: 293abb1b9e9fb1b41804d1bdad0a0b99,
+        type: 3}
+      propertyPath: GAME_SCENE
+      value: game
+      objectReference: {fileID: 0}
     - target: {fileID: 5931813010358158767, guid: 293abb1b9e9fb1b41804d1bdad0a0b99,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -1846,60 +1856,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5883219418215427009, guid: 0ae3bb9f975579847bc21de51576501a,
-        type: 3}
-      propertyPath: maxMove
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 5883219418215427013, guid: 0ae3bb9f975579847bc21de51576501a,
         type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5883219418390284247, guid: 0ae3bb9f975579847bc21de51576501a,
-        type: 3}
-      propertyPath: shotgunSpread
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 5883219418390284247, guid: 0ae3bb9f975579847bc21de51576501a,
-        type: 3}
-      propertyPath: pistolSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5883219418390284247, guid: 0ae3bb9f975579847bc21de51576501a,
-        type: 3}
-      propertyPath: shotgunStartUpSpeedMax
-      value: 5.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5883219418390284247, guid: 0ae3bb9f975579847bc21de51576501a,
-        type: 3}
-      propertyPath: shotgunStartUpSpeedMin
-      value: 1.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5883219418390284247, guid: 0ae3bb9f975579847bc21de51576501a,
-        type: 3}
-      propertyPath: shotgunBulletDuration
-      value: 0.24
-      objectReference: {fileID: 0}
-    - target: {fileID: 5883219418390284247, guid: 0ae3bb9f975579847bc21de51576501a,
-        type: 3}
-      propertyPath: shotgunBullets
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5883219418390284247, guid: 0ae3bb9f975579847bc21de51576501a,
-        type: 3}
-      propertyPath: pistolCooldown
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5883219418390284247, guid: 0ae3bb9f975579847bc21de51576501a,
-        type: 3}
-      propertyPath: shotgunKnockBack
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5883219418390284247, guid: 0ae3bb9f975579847bc21de51576501a,
-        type: 3}
-      propertyPath: pistolSpread
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ae3bb9f975579847bc21de51576501a, type: 3}

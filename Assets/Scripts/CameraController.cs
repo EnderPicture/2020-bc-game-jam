@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     public GameObject playerObject;
-    public Camera camera;
+    public new Camera camera;
     public float cameraRadius = 4.0f;
     public float cameraSpeed = 8.0f;
 

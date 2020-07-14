@@ -1012,7 +1012,7 @@ Transform:
   m_GameObject: {fileID: 5883219416819092656}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.033, y: 0.502, z: 0}
-  m_LocalScale: {x: 0.380525, y: 0.380525, z: 0.380525}
+  m_LocalScale: {x: 0.380525, y: 0.380525, z: 1}
   m_Children: []
   m_Father: {fileID: 5883219417153647328}
   m_RootOrder: 0
@@ -1055,8 +1055,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -5413478373419034148, guid: 845e603a261686740b357c9a8a9ac730,
+  m_SortingOrder: 1
+  m_Sprite: {fileID: -8449315907688724925, guid: 04278deda4729a541898c698cb0e0ba5,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1218,7 +1218,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: -177594311688952434, guid: 7ecaa175d7b72478daafd5248d5fa17e,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1300,7 +1300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 5883219418215427010}
-  maxMove: 7
+  maxMove: 8
   accMove: 5
   dampMove: 10
   animator: {fileID: 1793695505}
@@ -1388,16 +1388,16 @@ MonoBehaviour:
   spawnPoint: {fileID: 5883219418037755467}
   rb: {fileID: 5883219418215427010}
   player: {fileID: 5883219418215427009}
-  pistolSpread: 8
-  pistolCooldown: 0.2
-  pistolSpeed: 1.5
-  shotgunBullets: 5
-  shotgunSpread: 16
-  shotgunStartUpSpeedMax: 1.85
-  shotgunStartUpSpeedMin: 1.3
-  shotgunBulletDuration: 0.45
+  pistolSpread: 10
+  pistolCooldown: 0.1
+  pistolSpeed: 5
+  shotgunBullets: 15
+  shotgunSpread: 25
+  shotgunStartUpSpeedMax: 5.5
+  shotgunStartUpSpeedMin: 1.2
+  shotgunBulletDuration: 0.24
   shotgunCooldown: 0.6
-  shotgunKnockBack: 2
+  shotgunKnockBack: 3
   animator: {fileID: 1680733248}
   spriteRenderer: {fileID: 5883219418096223542}
   cameraController: {fileID: 0}

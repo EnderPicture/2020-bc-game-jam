@@ -4,9 +4,8 @@ public class deskCollide : MonoBehaviour {
 
     }
     
-    void OnTriggerStay(Collision other) {
+    void OnTriggerStay(Collider other) {
         if( other.gameObject.layer == LayerMask.NameToLayer("Bullet") ) {
-            Debug.Log("Bullet should be dead now");
             other.gameObject.GetComponent<BulletController>().die();
         }
     } // OnCollisionEnter

@@ -124,7 +124,7 @@ public class ArmController : MonoBehaviour
         if (22.5f + 10.5f + 45 * 1 < angle && angle < (22.5 + 10.5f + 45) + 45 * 1)
         {
             // right
-            animator.Play("Armswing2");
+            animator.Play("ArmswingTest");
             spriteRenderer.flipX = true;
             spriteRenderer.flipY = false;
         }
@@ -180,6 +180,7 @@ public class ArmController : MonoBehaviour
                 lastShot = time;
                 pistol();
             }
+            spriteRenderer.GetComponent<SpriteRenderer>().sortingOrder = -(int)(transform.position.y * 100)+10;
             moveArm();
         } 
     }
