@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MenuOptions : MonoBehaviour
 {
-    public string GAME_SCENE = "alvinbalance";
+    public string GAME_SCENE = "game";
     public AudioManager audioManager;
     void Start() {
         audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
