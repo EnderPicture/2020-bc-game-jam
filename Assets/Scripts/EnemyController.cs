@@ -77,8 +77,14 @@ public class EnemyController : MonoBehaviour
             sprite.color = new Color(1f, 0, 0);
             transform.localScale = new Vector3(2f, 2f, 2f);
         }
-        
-        sprite.GetComponent<SpriteRenderer>().sortingOrder = -(int)(transform.position.y * 100);
+        if (!isDead)
+        {
+            sprite.GetComponent<SpriteRenderer>().sortingOrder = -(int)(transform.position.y * 100);
+        } 
+        else
+        {
+            sprite.GetComponent<SpriteRenderer>().sortingOrder = -(int)(transform.position.y * 100)-200;
+        }
 
         if (isDead == false && mode == FOLLOWER && PauseMenu.GameIsPaused == false)
         {   
