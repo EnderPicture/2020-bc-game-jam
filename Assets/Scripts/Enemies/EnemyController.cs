@@ -45,10 +45,10 @@ public class EnemyController : MonoBehaviour
     public float coolDown;
     float lastShot;
 
-    public float boostValue;
+    public float boostValue= 10;
     public Vector2 boostTimingRange;
     float nextBoost;
-    float lastDash;
+    float lastDash = 0;
 
     public float followerShootSpread;
     public float followerHealth = 10;
@@ -231,8 +231,9 @@ public class EnemyController : MonoBehaviour
                 rb.AddForce(deltaVelocity.x, deltaVelocity.y, 0);
             }
 
-            if (mode == BOSS && Time.realtimeSinceStartup > lastDash + nextBoost)
+            if (mode == ENEMY && Time.realtimeSinceStartup > lastDash + nextBoost)
             {
+                
                 lastDash = Time.realtimeSinceStartup;
                 generateBossBoost();
                 rb.AddForce(input.x * boostValue, input.y * boostValue, 0, ForceMode.Impulse);

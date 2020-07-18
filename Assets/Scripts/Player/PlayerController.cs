@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
             angle += 180;
             savedAngle = angle;
             spriteRenderer.GetComponent<SpriteRenderer>().sortingOrder = -(int)(transform.position.y * 100);
-                move(angle);
+            move(angle);
 
             if (Input.GetKeyDown("space") && PauseMenu.GameIsPaused == false)
             {
