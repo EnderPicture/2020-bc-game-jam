@@ -18,7 +18,7 @@ public class InfluencerBubbleController : MonoBehaviour
         {
             if (enemy.getMode() == 0)
             {
-                enemy.convertToFollowers();
+                enemy.convertToFollower();
             }
         }
     }
