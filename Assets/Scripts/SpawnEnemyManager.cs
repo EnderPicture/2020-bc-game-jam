@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class SpawnEnemy : MonoBehaviour {
+public class SpawnEnemyManager : MonoBehaviour {
     
     public Transform player;
     public Spawner[] spawner;
@@ -54,4 +54,4 @@ public class SpawnEnemy : MonoBehaviour {
    
     } // update
 
-} // SpawnEnemy Class 
+} // SpawnEnemyManager Class 

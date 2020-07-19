@@ -9,7 +9,7 @@ public class Spawner : MonoBehaviour
 
     public Transform player;
 
-    public SpawnEnemy se;
+    public SpawnEnemyManager se;
 
     public static int RAND = 0;
     public int mode = RAND;
