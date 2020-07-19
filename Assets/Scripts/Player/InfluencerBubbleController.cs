@@ -4,22 +4,12 @@ using UnityEngine;
 
 public class InfluencerBubbleController : MonoBehaviour
 {
-    // Start is called before the first frame update
-
-    List<EnemyController> stuffInBubble = new List<EnemyController>();
-    void Start()
-    {
-
-    }
-
+    List<OnionController> stuffInBubble = new List<OnionController>();
     public void influence()
     {
-        foreach (EnemyController enemy in stuffInBubble)
+        foreach (OnionController enemy in stuffInBubble)
         {
-            if (enemy.getMode() == 0)
-            {
-                enemy.convertToFollower();
-            }
+            enemy.convertToFollower();
         }
     }
 
@@ -27,7 +17,7 @@ public class InfluencerBubbleController : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            stuffInBubble.Add(other.gameObject.GetComponent<EnemyController>());
+            stuffInBubble.Add(other.gameObject.GetComponent<OnionController>());
         }
     }
 

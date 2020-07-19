@@ -109,10 +109,11 @@ MonoBehaviour:
   tl: {fileID: 0}
   br: {fileID: 0}
   player: {fileID: 0}
+  se: {fileID: 0}
   mode: 0
   amount: 10
   enemies:
-  - {fileID: 2969086682407869389, guid: 8b3228a09bfa5e941a13e329d25c25e9, type: 3}
+  - {fileID: 8655892683199209864, guid: f2f0d55de7b27be42b4efa22c8b0ce3b, type: 3}
   container: {fileID: 0}
 --- !u!212 &5487670857429710245
 SpriteRenderer:
@@ -161,6 +162,6 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0

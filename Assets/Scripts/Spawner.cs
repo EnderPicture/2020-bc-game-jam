@@ -26,9 +26,9 @@ public class Spawner : MonoBehaviour
             for (int i = 0; i < a; i++)
             {
                 int rand = Random.Range(0, enemies.Length);
-                GameObject newEnemy = GameObject.Instantiate(enemies[0]);
-                newEnemy.GetComponent<EnemyController>().player = player;
-                newEnemy.GetComponent<EnemyController>().se = se;
+                GameObject newEnemy = Instantiate(enemies[0]);
+                newEnemy.GetComponent<OnionController>().player = player;
+                newEnemy.GetComponent<OnionController>().se = se;
                 newEnemy.transform.position = new Vector3(Random.Range(tl.position.x, br.position.x), Random.Range(br.position.y, tl.position.y), 0);
             }
         }
@@ -37,10 +37,9 @@ public class Spawner : MonoBehaviour
     public EnemyController spawnBoss()
     {
         int rand = Random.Range(0, enemies.Length);
-        GameObject newEnemy = GameObject.Instantiate(enemies[0]);
+        GameObject newEnemy = Instantiate(enemies[0]);
         newEnemy.GetComponent<EnemyController>().player = player;
         newEnemy.GetComponent<EnemyController>().se = se;
-        newEnemy.GetComponent<EnemyController>().mode = 2;
         newEnemy.GetComponent<EnemyController>().setHealth(100);
         newEnemy.transform.position = new Vector3(Random.Range(tl.position.x, br.position.x), Random.Range(br.position.y, tl.position.y), 0);
         return newEnemy.GetComponent<EnemyController>();

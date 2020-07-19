@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// Player-sided bullets, may need to make this a super class and have children class 
 public class BulletController : MonoBehaviour
 {
-    public Rigidbody rb;
+    Rigidbody rb;
     public float speed;
 
     public float health;
@@ -20,6 +20,7 @@ public class BulletController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
         spawnTime = Time.time;
     }
 
@@ -33,7 +34,7 @@ public class BulletController : MonoBehaviour
             speedMod = 1;
             if (spawnTime + health < Time.time)
             {
-                die();
+                GameObject.Destroy(this.gameObject);
             }
         }
         else if (mode == 1)
@@ -41,17 +42,29 @@ public class BulletController : MonoBehaviour
             speedMod = ((spawnTime + health) - Time.time) / health;
             if (spawnTime + health < Time.time)
             {
-                die();
+                GameObject.Destroy(this.gameObject);
             }
         }
     }
-    public void die()
-    {
-        GameObject.Destroy(this.gameObject);
-    }
     public void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Wall"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            EnemyController enemy = other.gameObject.GetComponent<EnemyController>();
+            Vector2 rotated = Helper.AngleVector(transform.eulerAngles.z * Mathf.Deg2Rad);
+            rotated = Quaternion.Euler(0, 0, Random.Range(80, 100)) * rotated;
+            if (enemy.isDeadFromHit())
+            {
+                enemy.rb.AddForce(rotated * 5f, ForceMode.Impulse);
+            }
+            else
+            {
+                enemy.rb.AddForce(rotated, ForceMode.Impulse);
+            }
+            enemy.hit();
+            GameObject.Destroy(this.gameObject);
+        }
+        else if (other.gameObject.layer == LayerMask.NameToLayer("Wall"))
         {
             GameObject.Destroy(this.gameObject);
         }
