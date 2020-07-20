@@ -4,7 +4,7 @@ using UnityEngine;
 // Player-sided bullets, may need to make this a super class and have children class 
 public class BulletController : MonoBehaviour
 {
-    Rigidbody rb;
+    //Rigidbody rb;
     public float speed;
 
     public float health;
@@ -20,7 +20,7 @@ public class BulletController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        //rb = GetComponent<Rigidbody>();
         spawnTime = Time.time;
     }
 
@@ -73,7 +73,7 @@ public class BulletController : MonoBehaviour
     {
         if(PauseMenu.GameIsPaused == false) {
             Vector3 position = transform.localPosition;
-            position += transform.up * speed * Time.deltaTime * Mathf.Min((speedMod + .3f), 1);
+            position += transform.up * speed * Time.fixedDeltaTime * Mathf.Min((speedMod + .3f), 1);
             transform.localPosition = position;
         }
     }

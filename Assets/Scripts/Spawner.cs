@@ -25,7 +25,7 @@ public class Spawner : MonoBehaviour
         {
             for (int i = 0; i < a; i++)
             {
-                int rand = Random.Range(0, enemies.Length);
+                //int rand = Random.Range(0, enemies.Length);
                 GameObject newEnemy = Instantiate(enemies[0]);
                 newEnemy.GetComponent<OnionController>().player = player;
                 newEnemy.GetComponent<OnionController>().se = se;
@@ -36,7 +36,7 @@ public class Spawner : MonoBehaviour
 
     public EnemyController spawnBoss()
     {
-        int rand = Random.Range(0, enemies.Length);
+        //int rand = Random.Range(0, enemies.Length);
         GameObject newEnemy = Instantiate(enemies[0]);
         newEnemy.GetComponent<EnemyController>().player = player;
         newEnemy.GetComponent<EnemyController>().se = se;

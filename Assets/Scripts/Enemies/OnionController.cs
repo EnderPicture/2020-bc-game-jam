@@ -84,7 +84,5 @@ public class OnionController : EnemyController
         follower.transform.position = new Vector3(transform.position.x, transform.position.y, 0);
         followerController.player = player;
         GameObject.Destroy(this.gameObject);
-        // gameObject.layer = LayerMask.NameToLayer("Followers");
-        // sprite.color = new Color(1, 0, 0);
     }
 }

@@ -32,7 +32,7 @@ public class FollowerController : EnemyController
             {
                 lastShot = time;
                 Quaternion bulletSpread = Quaternion.Euler(new Vector3(0, 0, angle + Random.Range(-followerShootSpread, followerShootSpread)));
-                GameObject newBullet = GameObject.Instantiate(bullet, transform.position, bulletSpread);
+                Instantiate(bullet, transform.position, bulletSpread);
             }
 
         }
@@ -108,7 +108,7 @@ public class FollowerController : EnemyController
     }
     protected override void OnCollisionStay(Collision other)
     {
-
+        // do nothing
     }
 
 }

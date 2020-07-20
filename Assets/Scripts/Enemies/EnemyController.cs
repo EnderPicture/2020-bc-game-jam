@@ -81,7 +81,7 @@ public class EnemyController : MonoBehaviour
         this.health = health;
     }
 
-    void miniCharge(Vector2 direction)
+    protected void miniCharge(Vector2 direction)
     {
         if (Time.realtimeSinceStartup > lastDash + nextBoost)
         {
